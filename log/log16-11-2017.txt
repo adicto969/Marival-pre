@@ -1,0 +1,134 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[16/11/2017 01:43:17 AM] - SQLSTATE: 42000
+[16/11/2017 01:43:17 AM] - CODIGO: 156
+[16/11/2017 01:43:17 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AS'.
+[16/11/2017 01:43:17 AM] - CONSULTA: 
+SELECT
+  codigo,
+  nomE,
+  Horario,
+  Nombre,
+  LUN,
+  MAR,
+  MIE,
+  JUE,
+  VIE,
+  SAB,
+  DOM,
+  TOTAL_REGISTROS,
+  CEILING(TOTAL_REGISTROS / TODO.0) AS PAGINA
+FROM (
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY codigo) AS ROW_NUM,
+    codigo,
+    nomE,
+    Horario,
+    Nombre,
+    [LUN],
+    [MAR],
+    [MIE],
+    [JUE],
+    [VIE],
+    [SAB],
+    [DOM],
+    TOTAL_REGISTROS
+  FROM
+    ( SELECT
+        E.codigo,
+        E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nomE,
+        l.horario,
+        k.nombre,
+        x.nombre_dia,
+        (CASE WHEN entra1 = '' THEN 'DESCANSO' ELSE x.entra1 +' A '+ x.sale1 END) AS Hora,
+        (
+          SELECT COUNT(E.codigo)
+          FROM empleados AS E
+          INNER JOIN Llaves AS l ON l.codigo = E.codigo AND l.empresa = E.empresa
+
+          WHERE  l.centro = '50012' AND l.empresa = '2' AND E.activo= 'S'
+        ) AS TOTAL_REGISTROS
+
+    FROM empleados AS E
+    INNER JOIN Llaves AS l ON l.codigo = E.codigo AND l.empresa = E.empresa
+    LEFT JOIN horarios_catalogo AS k ON k.horario = l.horario
+    LEFT JOIN detalle_horarios AS x ON x.horario = k.horario AND l.empresa = k.empresa
+
+    WHERE  l.centro = '50012' AND l.empresa = '2' AND E.activo= 'S'
+
+  ) x
+    pivot
+  (
+    min(Hora)
+    for nombre_dia in ([LUN], [MAR], [MIE], [JUE], [VIE], [SAB], [DOM])
+  )q
+
+) AS X
+
+ORDER BY codigo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[16/11/2017 01:43:33 AM] - SQLSTATE: 42000
+[16/11/2017 01:43:33 AM] - CODIGO: 156
+[16/11/2017 01:43:33 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AS'.
+[16/11/2017 01:43:33 AM] - CONSULTA: 
+SELECT
+  codigo,
+  nomE,
+  Horario,
+  Nombre,
+  LUN,
+  MAR,
+  MIE,
+  JUE,
+  VIE,
+  SAB,
+  DOM,
+  TOTAL_REGISTROS,
+  CEILING(TOTAL_REGISTROS / TODO.0) AS PAGINA
+FROM (
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY codigo) AS ROW_NUM,
+    codigo,
+    nomE,
+    Horario,
+    Nombre,
+    [LUN],
+    [MAR],
+    [MIE],
+    [JUE],
+    [VIE],
+    [SAB],
+    [DOM],
+    TOTAL_REGISTROS
+  FROM
+    ( SELECT
+        E.codigo,
+        E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nomE,
+        l.horario,
+        k.nombre,
+        x.nombre_dia,
+        (CASE WHEN entra1 = '' THEN 'DESCANSO' ELSE x.entra1 +' A '+ x.sale1 END) AS Hora,
+        (
+          SELECT COUNT(E.codigo)
+          FROM empleados AS E
+          INNER JOIN Llaves AS l ON l.codigo = E.codigo AND l.empresa = E.empresa
+
+          WHERE  l.centro = '50012' AND l.empresa = '2' AND E.activo= 'S'
+        ) AS TOTAL_REGISTROS
+
+    FROM empleados AS E
+    INNER JOIN Llaves AS l ON l.codigo = E.codigo AND l.empresa = E.empresa
+    LEFT JOIN horarios_catalogo AS k ON k.horario = l.horario
+    LEFT JOIN detalle_horarios AS x ON x.horario = k.horario AND l.empresa = k.empresa
+
+    WHERE  l.centro = '50012' AND l.empresa = '2' AND E.activo= 'S'
+
+  ) x
+    pivot
+  (
+    min(Hora)
+    for nombre_dia in ([LUN], [MAR], [MIE], [JUE], [VIE], [SAB], [DOM])
+  )q
+
+) AS X
+
+ORDER BY codigo

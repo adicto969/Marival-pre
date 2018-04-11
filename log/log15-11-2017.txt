@@ -1,0 +1,60 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[15/11/2017 12:23:21 AM] - SQLSTATE: 42000
+[15/11/2017 12:23:21 AM] - CODIGO: 156
+[15/11/2017 12:23:21 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'FROM'.
+[15/11/2017 12:23:21 AM] - CONSULTA: 
+    SELECT codigo,
+           nombre,
+           ocupacion,
+           actividad,
+           horario,
+           fechaAnti,
+           fechaAlta,
+           fechaTer,
+           dias,
+           TOTAL_REGISTROS,
+           CEILING(TOTAL_REGISTROS / 20.0) AS PAGINA
+    FROM (
+          SELECT
+              ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+              E.codigo,
+              LTRIM ( RTRIM( E.ap_paterno ) )+' '+LTRIM ( RTRIM ( E.ap_materno ) )+' '+LTRIM ( RTRIM ( E.nombre ) ) AS nombre,
+              L.ocupacion,
+              T.actividad,
+              L.horario,
+              MAX ( CONVERT (VARCHAR(10), E.fchantigua, 103) ) AS fechaAnti,
+              MAX ( CONVERT (VARCHAR(10), C.fchAlta, 103) ) AS fechaAlta,
+              MAX ( CONVERT (VARCHAR(10), C.fchterm, 103) ) AS fechaTer,
+              SUM(C.dias) AS dias,
+              (SELECT
+                  COUNT( L.ocupacion )
+               FROM empleados AS E
+               LEFT JOIN contratos AS C ON C.empresa = E.empresa AND C.codigo = E.codigo
+               INNER JOIN Llaves AS L ON L.empresa = E.empresa AND L.codigo = E.codigo
+               INNER JOIN tabulador AS T ON T.empresa = L.empresa AND T.ocupacion = L.ocupacion
+               WHERE E.activo = 'S' AND
+               L.supervisor = '0' AND
+               L.centro = '50012' AND L.empresa = '2'
+                OR T.actividad LIKE '%2104%')
+              ) AS TOTAL_REGISTROS
+
+          FROM empleados AS E
+          LEFT JOIN contratos AS C ON C.empresa = E.empresa AND C.codigo = E.codigo
+          INNER JOIN Llaves AS L ON L.empresa = E.empresa AND L.codigo = E.codigo
+          INNER JOIN tabulador AS T ON T.empresa = L.empresa AND T.ocupacion = L.ocupacion
+          WHERE E.activo = 'S' AND
+          L.supervisor = '0' AND
+          L.centro = '50012' AND L.empresa = '2'
+           OR T.actividad LIKE '%2104%')
+          GROUP BY
+             E.codigo,
+             E.ap_paterno,
+             E.ap_materno,
+             E.nombre,
+             E.fchantigua,
+             L.ocupacion,
+             T.actividad,
+             L.horario
+      ) AS X
+  WHERE ROW_NUM BETWEEN (1 - 1) * 20 + 1 AND (1 - 1) * 20 + 20
+  ORDER BY nombre

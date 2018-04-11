@@ -1,5 +1,0 @@
-test
-esto es un test de inicio git 
-esto es otra prueba de git
-test dev
-testtt 

@@ -1,0 +1,55 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 01:06:36 AM] - SQLSTATE: 42000
+[18/11/2017 01:06:36 AM] - CODIGO: 102
+[18/11/2017 01:06:36 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de '%'.
+[18/11/2017 01:06:36 AM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20161226',
+  '20170110',
+  '50012',
+  '0',
+  '2',
+  '4',
+  'L.centro = ''50012''',
+  '0',
+  '1',
+  '10',
+  'AND (E.codigo LIKE '%1569%' OR E.ap_paterno LIKE '%1569%' OR E.ap_materno LIKE '%1569%' OR E.nombre LIKE '%1569%')',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:38 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:38 PM] - CODIGO: 105
+[18/11/2017 08:37:38 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:38 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:42 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:42 PM] - CODIGO: 105
+[18/11/2017 08:37:42 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:42 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''K', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:42 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:42 PM] - CODIGO: 105
+[18/11/2017 08:37:42 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:42 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAK', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:42 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:42 PM] - CODIGO: 105
+[18/11/2017 08:37:42 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:42 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:43 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:43 PM] - CODIGO: 105
+[18/11/2017 08:37:43 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:43 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:43 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:43 PM] - CODIGO: 105
+[18/11/2017 08:37:43 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ');'.
+[18/11/2017 08:37:43 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:44 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:44 PM] - CODIGO: 102
+[18/11/2017 08:37:44 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de 'KAKS'.
+[18/11/2017 08:37:44 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS'', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:46 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:46 PM] - CODIGO: 102
+[18/11/2017 08:37:46 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de 'KAKS'.
+[18/11/2017 08:37:46 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS';', '1', '2', '1', '827040210412');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[18/11/2017 08:37:46 PM] - SQLSTATE: 42000
+[18/11/2017 08:37:46 PM] - CODIGO: 102
+[18/11/2017 08:37:46 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de 'KAKS'.
+[18/11/2017 08:37:46 PM] - CONSULTA: INSERT INTO datos VALUES ('1388', '07-01-2017', ''KAKS';', '1', '2', '1', '827040210412');

@@ -1,0 +1,232 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 01:38:57 AM] - SQLSTATE: 42000
+[19/11/2017 01:38:57 AM] - CODIGO: 102
+[19/11/2017 01:38:57 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de '='.
+[19/11/2017 01:38:57 AM] - CONSULTA: SELECT sueldo
+                  FROM empleados
+                  WHERE codigo = 6665
+                  AND empresa = :::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 02:40:41 AM] - SQLSTATE: 42000
+[19/11/2017 02:40:41 AM] - CODIGO: 156
+[19/11/2017 02:40:41 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AS'.
+[19/11/2017 02:40:41 AM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20161226',
+  '20170110',
+  '827040210412',
+  '10',
+  '1',
+  '2',
+  'L.centro = ''827040210412''',
+  '0',
+  '1',
+  'TODO',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * TODO + 1 AND (1 - 1) * TODO + TODO',
+  'codigo':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 02:45:11 AM] - SQLSTATE: 42000
+[19/11/2017 02:45:11 AM] - CODIGO: 156
+[19/11/2017 02:45:11 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AS'.
+[19/11/2017 02:45:11 AM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20161226',
+  '20170110',
+  '827040210412',
+  '10',
+  '1',
+  '2',
+  'L.centro = ''827040210412''',
+  '0',
+  '1',
+  'TODO',
+  '',
+  '',
+  'codigo':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 02:46:13 AM] - SQLSTATE: 42S22
+[19/11/2017 02:46:13 AM] - CODIGO: 207
+[19/11/2017 02:46:13 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El nombre de columna 'TODO' no es válido.
+[19/11/2017 02:46:13 AM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20161226',
+  '20170110',
+  '827040210412',
+  '10',
+  '1',
+  '2',
+  'L.centro = ''827040210412''',
+  '0',
+  '1',
+  '1',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * TODO + 1 AND (1 - 1) * TODO + TODO',
+  'codigo':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 03:01:30 PM] - SQLSTATE: 01000
+[19/11/2017 03:01:30 PM] - CODIGO: 3621
+[19/11/2017 03:01:30 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Se terminó la instrucción.
+[19/11/2017 03:01:30 PM] - CONSULTA: INSERT INTO retardo VALUES ('6240', '30-12-2016', '05/01/2017', 'J', '2', '827040210412', '1', '1');:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 03:09:48 PM] - SQLSTATE: 42000
+[19/11/2017 03:09:48 PM] - CODIGO: 105
+[19/11/2017 03:09:48 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ';'.
+[19/11/2017 03:09:48 PM] - CONSULTA: UPDATE datos SET valor = 'G'' WHERE codigo = '10039' AND nombre = '07-01-2017' AND periodoP = '1' AND tipoN = '2' AND IDEmpresa = '1' AND Centro = '827040210412';:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 03:11:17 PM] - SQLSTATE: 42000
+[19/11/2017 03:11:17 PM] - CODIGO: 105
+[19/11/2017 03:11:17 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Falta la comilla de cierre después de la cadena de caracteres ';'.
+[19/11/2017 03:11:17 PM] - CONSULTA: UPDATE retardo SET valor = 'J'' WHERE codigo = '6665' AND fecha = '03-01-2017' AND periodo = '1' AND TN = '2' AND IDEmpresa = '1' AND Dep = '827040210412';:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:12:42 PM] - 
+[19/11/2017 08:12:42 PM] - 
+[19/11/2017 08:12:42 PM] - 
+[19/11/2017 08:12:42 PM] - CONSULTA: :::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:14:23 PM] - SQLSTATE: 42000
+[19/11/2017 08:14:23 PM] - CODIGO: 201
+[19/11/2017 08:14:23 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El procedimiento o la función 'reporte_checadas_excel_ctro' esperaba el parámetro '@pagina', que no se ha especificado.
+[19/11/2017 08:14:23 PM] - CONSULTA: [dbo].[reporte_checadas_excel_ctro]
+            '20161226',
+            '20170110',
+            '827040210412',
+            '0',
+            '1',
+            '2',
+            'Llaves.centro = ''827040210412''',
+            '0':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:22:17 PM] - SQLSTATE: 42000
+[19/11/2017 08:22:17 PM] - CODIGO: 4104
+[19/11/2017 08:22:17 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El identificador formado por varias partes "Llaves.centro" no se pudo enlazar.
+[19/11/2017 08:22:17 PM] - CONSULTA: [dbo].[reporte_checadas_excel_ctro]
+            '20161226',
+            '20170110',
+            '827040210412',
+            '0',
+            '1',
+            '2',
+            'Llaves.centro = ''827040210412''',
+            '0',
+            '1',
+            '1',
+            '',
+            '',
+            '':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:42:47 PM] - 
+[19/11/2017 08:42:47 PM] - 
+[19/11/2017 08:42:47 PM] - 
+[19/11/2017 08:42:47 PM] - CONSULTA: [dbo].[reporte_checadas_excel_ctro]
+            '20161226',
+            '20170110',
+            '827040210412',
+            '0',
+            '1',
+            '2',
+            'L.centro = ''827040210412''',
+            '0',
+            '1',
+            '1',
+            '',
+            '',
+            '':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:43:49 PM] - SQLSTATE: 42S22
+[19/11/2017 08:43:49 PM] - CODIGO: 207
+[19/11/2017 08:43:49 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El nombre de columna 'Frente' no es válido.
+[19/11/2017 08:43:49 PM] - CONSULTA: SELECT Valor, Frente FROM TiempoExtra WHERE Codigo = '1388' AND Fecha = '26-12-2016' AND Periodo = '1' AND Tn = '2' AND IDEmpresa = '1' AND Centro = '827040210412';
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:59:18 PM] - 2
+[19/11/2017 08:59:18 PM] - 2
+[19/11/2017 08:59:18 PM] - 2
+[19/11/2017 08:59:18 PM] - CONSULTA: :::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 08:59:55 PM] - SQLSTATE: 42000
+[19/11/2017 08:59:55 PM] - CODIGO: 4104
+[19/11/2017 08:59:55 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El identificador formado por varias partes "Llaves.centro" no se pudo enlazar.
+[19/11/2017 08:59:55 PM] - CONSULTA: [dbo].[reporte_checadas_excel_ctro]
+          '20161226',
+          '20170110',
+          '827040210412',
+          '10',
+          '1',
+          '2',
+          'Llaves.centro = ''827040210412''',
+          '0',
+          '1',
+          '1',
+          '',
+          '',
+          '':::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 09:40:41 PM] - SQLSTATE: 42000
+[19/11/2017 09:40:41 PM] - CODIGO: 156
+[19/11/2017 09:40:41 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'group'.
+[19/11/2017 09:40:41 PM] - CONSULTA: 
+        select all (empleados.codigo),
+        ltrim (empleados.ap_paterno)+' '+ltrim (empleados.ap_materno)+' '+ltrim (empleados.nombre) ,
+        llaves.ocupacion,
+        tabulador.actividad,
+        llaves.horario,
+        MAx (convert(varchar(10),empleados.fchantigua,103)),
+        max(convert(varchar(10),contratos.fchAlta ,103)) ,
+        max(convert(varchar(10),contratos.fchterm ,103)) ,
+        SUM(contratos.dias)
+
+        from empleados
+
+        LEFT  join contratos  on contratos.empresa = empleados.empresa and contratos.codigo = empleados.codigo
+        INNER JOIN llaves on llaves.empresa = empleados.empresa and llaves.codigo = empleados.codigo
+        INNER JOIN tabulador on tabulador.empresa = llaves.empresa and tabulador.ocupacion = llaves.ocupacion
+
+        where empleados.activo = 'S' AND
+          llaves.centro = '827040210412' and llaves.empresa = '1' AND
+
+        group by  empleados.codigo,
+              empleados.ap_paterno,
+              empleados.ap_materno,
+              empleados.nombre,
+              empleados.fchantigua,
+              llaves.ocupacion,
+              tabulador.actividad,
+              llaves.horario
+    :::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 10:17:49 PM] - SQLSTATE: 42000
+[19/11/2017 10:17:49 PM] - CODIGO: 156
+[19/11/2017 10:17:49 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'from'.
+[19/11/2017 10:17:49 PM] - CONSULTA: select L.codigo AS Codigo,
+                    E.nombre + ' '+E.ap_paterno + ' '+E.ap_materno AS Nombre,
+                    E.sueldo,
+                 from Llaves AS L
+                 INNER JOIN empleados AS E ON E.codigo = L.codigo AND E.empresa = L.empresa
+                 LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '2017'
+
+                 WHERE L.empresa = 1 AND
+                 L.centro = '827040210412' AND
+                 L.supervisor = '10' AND
+                 L.tiponom = '2' AND
+                 E.activo = 'S'
+                 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 10:22:32 PM] - SQLSTATE: 42S02
+[19/11/2017 10:22:32 PM] - CODIGO: 208
+[19/11/2017 10:22:32 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El nombre de objeto 'destajo' no es válido.
+[19/11/2017 10:22:32 PM] - CONSULTA: select L.codigo AS Codigo,
+                    E.nombre + ' '+E.ap_paterno + ' '+E.ap_materno AS Nombre,
+                    E.sueldo,D.empresa,D.codigo,D.centro,D.num_conc,D.folio,D.clase,D.ocupacion,D.periodo,D.tiponom,D.mes_operacion,D.ayo_operacion,D.Id_destajo,D.horas_t,D.marca,D.clave,D.promedio,D.base_calc,D.horas,D.cantidad,D.percepcion,D.tipopago,D.turno
+                 from Llaves AS L
+                 INNER JOIN empleados AS E ON E.codigo = L.codigo AND E.empresa = L.empresa
+                 LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '2017'
+
+                 WHERE L.empresa = 1 AND
+                 L.centro = '827040210412' AND
+                 L.supervisor = '10' AND
+                 L.tiponom = '2' AND
+                 E.activo = 'S'
+                 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[19/11/2017 10:23:23 PM] - SQLSTATE: 42S22
+[19/11/2017 10:23:23 PM] - CODIGO: 207
+[19/11/2017 10:23:23 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El nombre de columna 'IDEmpresa' no es válido.
+[19/11/2017 10:23:23 PM] - CONSULTA: select L.codigo AS Codigo,
+                    E.nombre + ' '+E.ap_paterno + ' '+E.ap_materno AS Nombre,
+                    E.sueldo,D.empresa,D.codigo,D.centro,D.num_conc,D.folio,D.clase,D.ocupacion,D.periodo,D.tiponom,D.mes_operacion,D.ayo_operacion,D.Id_destajo,D.horas_t,D.marca,D.clave,D.promedio,D.base_calc,D.horas,D.cantidad,D.percepcion,D.tipopago,D.turno
+                 from Llaves AS L
+                 INNER JOIN empleados AS E ON E.codigo = L.codigo AND E.empresa = L.empresa
+                 LEFT JOIN destajos AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '2017'
+
+                 WHERE L.empresa = 1 AND
+                 L.centro = '827040210412' AND
+                 L.supervisor = '10' AND
+                 L.tiponom = '2' AND
+                 E.activo = 'S'
+                 

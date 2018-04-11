@@ -1,0 +1,155 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::[11/11/2017 02:40:08 PM] - SQLSTATE: 42S22
+[11/11/2017 02:40:08 PM] - CODIGO: 207
+[11/11/2017 02:40:08 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El nombre de columna 'codigo' no es válido.
+[11/11/2017 02:40:08 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / 10.0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+	) AS X
+WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::[11/11/2017 08:12:30 PM] - SQLSTATE: 42000
+[11/11/2017 08:12:30 PM] - CODIGO: 4104
+[11/11/2017 08:12:30 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]El identificador formado por varias partes "T.actividad" no se pudo enlazar.
+[11/11/2017 08:12:30 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / 10.0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.codigo, E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa AND E.codigo LIKE '%AFANA%' OR E.ap_paterno LIKE '%AFANA%' OR E.ap_materno LIKE '%AFANA%' OR E.nombre LIKE '%AFANA%' OR T.actividad LIKE '%AFANA%'
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa AND E.codigo LIKE '%AFANA%' OR E.ap_paterno LIKE '%AFANA%' OR E.ap_materno LIKE '%AFANA%' OR E.nombre LIKE '%AFANA%' OR T.actividad LIKE '%AFANA%'
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'			
+	) AS X
+WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10
+ORDER BY codigo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[11/11/2017 09:43:47 PM] - SQLSTATE: 42000
+[11/11/2017 09:43:47 PM] - CODIGO: 156
+[11/11/2017 09:43:47 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'ORDER'.
+[11/11/2017 09:43:47 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / .0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.codigo, E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				 
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+			
+	) AS X
+WHERE ROW_NUM BETWEEN ( - 1) *  + 1 AND ( - 1) *  + 
+ORDER BY 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[11/11/2017 09:44:25 PM] - SQLSTATE: 42000
+[11/11/2017 09:44:25 PM] - CODIGO: 156
+[11/11/2017 09:44:25 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'ORDER'.
+[11/11/2017 09:44:25 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / .0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.codigo, E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				 
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+			
+	) AS X
+WHERE ROW_NUM BETWEEN ( - 1) *  + 1 AND ( - 1) *  + 
+ORDER BY 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[11/11/2017 09:45:31 PM] - SQLSTATE: 42000
+[11/11/2017 09:45:31 PM] - CODIGO: 156
+[11/11/2017 09:45:31 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'ORDER'.
+[11/11/2017 09:45:31 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / .0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.codigo, E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				 
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+			
+	) AS X
+WHERE ROW_NUM BETWEEN ( - 1) *  + 1 AND ( - 1) *  + 
+ORDER BY 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[11/11/2017 09:45:46 PM] - SQLSTATE: 42000
+[11/11/2017 09:45:46 PM] - CODIGO: 156
+[11/11/2017 09:45:46 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'ORDER'.
+[11/11/2017 09:45:46 PM] - CONSULTA: 
+SELECT codigo, nombre, actividad, TOTAL_REGISTROS,
+			 CEILING(TOTAL_REGISTROS / .0) AS PAGINA
+FROM (
+			SELECT
+				ROW_NUMBER() OVER (ORDER BY E.codigo) AS ROW_NUM,
+				E.codigo, E.ap_paterno+' '+E.ap_materno+' '+E.nombre AS nombre,
+				T.actividad,
+				(SELECT COUNT(E.codigo)
+				 FROM empleados AS E
+				 INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+				 INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+				 WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+				 
+				) AS TOTAL_REGISTROS
+			FROM empleados AS E
+			INNER JOIN Llaves AS L ON L.codigo = E.codigo AND L.empresa = E.empresa
+			INNER JOIN tabulador AS T ON T.ocupacion = L.ocupacion AND T.empresa = L.empresa
+			WHERE L.centro = '50012' AND L.empresa = '2' AND E.activo = 'S'
+			
+	) AS X
+WHERE ROW_NUM BETWEEN ( - 1) *  + 1 AND ( - 1) *  + 
+ORDER BY 

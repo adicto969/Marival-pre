@@ -1,0 +1,96 @@
+<div class="container" id="estado_consulta_ajax">
+    <div class="col s12 m8">
+        <div role="form" onkeypress="return scriptLogin(event)" class="z-depth-3 row">
+          <div id="estado_Login_ajax"></div>
+            <div class="center-align" style="padding-top: 50px;">
+                <a class="waves-effect waves-light btn-floating btn-large right-align" href="#modal1"><i data-target="modalConfig" class="material-icons prefix">add</i></a>
+                <div class="img" style="padding-top: 50px;">
+                  <img src="img/APSILOGO.jpg" id="LoginLogo"/>
+                </div>
+            </div>
+            <div class="input col s12 m6 offset-m3 l6 offset-l3" id="DivInputL">
+              <div class="input-field col s12">
+                <i class="material-icons prefix">account_circle</i>
+                <input type="text" id="user_login" class="validate" style="background-color: transparent;" />
+                <label for="user_login">Nombre Usuario</label>
+              </div>
+              <div class="input-field col s12">
+                <i class="material-icons prefix">lock</i>
+                <input type="password" id="pass_login" class="validate" style="background-color: transparent;"/>
+                <label for="pass_login">Contraseña</label>
+              </div>
+            </div>
+            <div class="boton col s12 center-align" style="margin-top: 50px; margin-bottom: 50px;">
+                <input class="btn" type="submit" value="Iniciar" onclick="Login()" id="btnLogin"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal col s12 m6 " id="modal1" style="overflow-x: hidden;">
+      <div style="width: 100%" class="teal lighten-2"><h4 class="center-align" style="padding-top: 5px; padding-bottom: 5px; color: white;">Nuevo Usuario</h4></div>
+      <div class="row" style="margin-bottom: 9px;">        
+        <div role="form" id="fAddU" onkeypress="return scriptLoginReg(event)" class="center-align col s12 m6 offset-m3">
+                <div class="input-field col s12">
+                  <input id="user_reg" type="text" class="validate" style="background-color: transparent;">
+                  <label for="user_reg">Nombre Usuario</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input id="empresa_reg" type="number" class="validate" style="background-color: transparent;">
+                  <label for="empresa_reg">N° Empresa</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input id="depto_reg" type="number" class="validate" style="background-color: transparent;">
+                  <label for="depto_reg">Codigo Departemento</label>
+                </div>
+
+                <div class="input-field col s12">
+                  <input id="pass_reg" type="password" class="validate" style="background-color: transparent;">
+                  <label for="pass_reg">Contraseña</label>
+                </div>
+
+                <div class="input-field col s12" style="margin-bottom: 10px;">
+                  <input id="Cpass_reg" type="password" class="validate" style="background-color: transparent;">
+                  <label for="Cpass_reg">Confirme Contraseña</label>
+                </div>
+
+              <label>ADMIN</label>
+              <div class="switch" style="margin-bottom: 10px; margin-top: 10px;">
+                <label>
+                  NO
+                  <input type="checkbox" id="admin_reg">
+                  <span class="lever"></span>
+                  SI
+                </label>
+              </div>
+
+                <label>AREA</label>
+                <p class="center-align">
+                  <input class="with-gap" name="area" type="radio" id="test1" value="1"/>
+                  <label for="test1">Nomina</label>
+
+                  <input class="with-gap" name="area" type="radio" id="test2" checked="checked" value="2"/>
+                  <label for="test2">Departamento</label>
+
+                  <input class="with-gap" name="area" type="radio" id="test3" value="3"/>
+                  <label for="test3">RH</label>
+
+                  <input class="with-gap" name="area" type="radio" id="test4" value="4"/>
+                  <label for="test4">Seguridad</label>
+                </p>
+
+                <div class="input-field col s12">
+                  <input id="Spass_reg" type="password" class="validate" style="background-color: transparent;">
+                  <label for="Spass_reg">Contraseña de Super Usuario</label>
+                </div>
+
+
+                <input class="btn" type="submit" id="btnAddU" value="Agregar Usuario" onclick="Registro()" style="margin-bottom: 10px; margin-top: 10px;"/>
+        </div>
+      </div>
+      <div id="estado_Login_ajax_reg"></div>
+    </div>
+</div>
+<script src="js/procesos/Nusuario.js"></script>
+<script src="js/procesos/login.js"></script>

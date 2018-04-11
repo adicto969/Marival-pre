@@ -1,0 +1,116 @@
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:26:17 AM] - SQLSTATE: 42000
+[20/11/2017 03:26:17 AM] - CODIGO: 156
+[20/11/2017 03:26:17 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[20/11/2017 03:26:17 AM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA3',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA4'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 
+                   AND ayo_operacion = 2017
+                   AND empresa = 1 ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:26:18 AM] - SQLSTATE: 42000
+[20/11/2017 03:26:18 AM] - CODIGO: 156
+[20/11/2017 03:26:18 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[20/11/2017 03:26:18 AM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA3',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA4'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 
+                   AND ayo_operacion = 2017
+                   AND empresa = 1 ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:26:18 AM] - SQLSTATE: 42000
+[20/11/2017 03:26:18 AM] - CODIGO: 156
+[20/11/2017 03:26:18 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[20/11/2017 03:26:18 AM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA3',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA4'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 
+                   AND ayo_operacion = 2017
+                   AND empresa = 1 ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:26:18 AM] - SQLSTATE: 42000
+[20/11/2017 03:26:18 AM] - CODIGO: 156
+[20/11/2017 03:26:18 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[20/11/2017 03:26:18 AM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA3',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA4'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 
+                   AND ayo_operacion = 2017
+                   AND empresa = 1 ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:26:19 AM] - SQLSTATE: 42000
+[20/11/2017 03:26:19 AM] - CODIGO: 156
+[20/11/2017 03:26:19 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[20/11/2017 03:26:19 AM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA3',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA4'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 
+                   AND ayo_operacion = 2017
+                   AND empresa = 1 ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:35:40 AM] - SQLSTATE: 22007
+[20/11/2017 03:35:40 AM] - CODIGO: 242
+[20/11/2017 03:35:40 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]La conversión del tipo de datos varchar en datetime produjo un valor fuera de intervalo.
+[20/11/2017 03:35:40 AM] - CONSULTA: [dbo].[proc_retardos]
+          '00000000',
+          '00000000',
+          '827040210412',
+          '0',
+          '1',
+          '1',
+          'E',
+          'min',
+          '0'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:35:40 AM] - 
+[20/11/2017 03:35:40 AM] - 
+[20/11/2017 03:35:40 AM] - 
+[20/11/2017 03:35:40 AM] - CONSULTA: 
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:37:30 AM] - SQLSTATE: 22007
+[20/11/2017 03:37:30 AM] - CODIGO: 242
+[20/11/2017 03:37:30 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]La conversión del tipo de datos varchar en datetime produjo un valor fuera de intervalo.
+[20/11/2017 03:37:30 AM] - CONSULTA: [dbo].[proc_retardos]
+          '00000000',
+          '00000000',
+          '827040210412',
+          '0',
+          '1',
+          '1',
+          'E',
+          'min',
+          '0'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:37:55 AM] - SQLSTATE: 22007
+[20/11/2017 03:37:55 AM] - CODIGO: 242
+[20/11/2017 03:37:55 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]La conversión del tipo de datos varchar en datetime produjo un valor fuera de intervalo.
+[20/11/2017 03:37:55 AM] - CONSULTA: [dbo].[proc_retardos]
+          '00000000',
+          '00000000',
+          '827040210412',
+          '0',
+          '1',
+          '1',
+          'E',
+          'min',
+          '0'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[20/11/2017 03:37:57 AM] - SQLSTATE: 22007
+[20/11/2017 03:37:57 AM] - CODIGO: 242
+[20/11/2017 03:37:57 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]La conversión del tipo de datos varchar en datetime produjo un valor fuera de intervalo.
+[20/11/2017 03:37:57 AM] - CONSULTA: [dbo].[proc_retardos]
+          '00000000',
+          '00000000',
+          '827040210412',
+          '0',
+          '1',
+          '1',
+          'E',
+          'min',
+          '0'
