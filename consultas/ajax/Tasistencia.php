@@ -635,8 +635,14 @@ while ($row=$objBDSQL->obtenResult()) {
             }
           }else {
             if(empty($row[$value])){
-              $_cuerpo .= '<td style="height: 74px;">
+              if($_valorC == "F"){
+                $_cuerpo .= '<td style="height: 74px; background-color: rgba(210, 33, 189, 0.67);" ondblclick="GuardarFS('.$row['codigo'].', \''.$_FechaCol.'\', \''.date("d/m/Y", strtotime($fechAumen." + ".$sumaDias." day")).'\', this, 1)">
                           '.$row[$value].'</td>';
+              }else {
+                $_cuerpo .= '<td style="height: 74px;" ondblclick="GuardarFS('.$row['codigo'].', \''.$_FechaCol.'\', \''.date("d/m/Y", strtotime($fechAumen." + ".$sumaDias." day")).'\', this, 0)">
+                          '.$row[$value].'</td>';
+              }
+              
             }else {
               if($_PDOM_DLabora[0] == "1"){
                 $_cuerpo .= '<td class="Aline" style="height: 74px;">

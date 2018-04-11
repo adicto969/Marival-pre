@@ -24,7 +24,7 @@ define('Unidad', 'C:\\apsisistemas\\ARCHIVOS\\');
 define('HTML_DIR', 'html/');
 define('TITULO_PAGINA', 'PRENOMINA');
 define('FECHA_MODIFICACION', 'Ultima Actualización : 16/11/2017');
-define('URL_PAGINA', 'http://localhost:8080/GitHub/General/PrenominaGeneral/');
+define('URL_PAGINA', 'http://localhost:8080/GitHub-Marival/');
 
 define('Autoriza1', 'sudo');
 define('Autoriza2', 'Nominas');

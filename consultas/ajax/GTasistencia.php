@@ -266,6 +266,9 @@ class PDF extends FPDF
             $DobTT = 1;
           }
 
+          if($datos == "-N" || $datos == "-n")
+            $datos = "";          
+
           if($DesLBD == 1 && $DobTT == 1){
             $this->SetFillColor(136, 136, 237);
           }else if($DesLBD == 1){

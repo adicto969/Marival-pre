@@ -306,6 +306,40 @@ function GuardarTR(codigo, fecha, fechaO){
 }
 
 
+function GuardarFS(codigo, fecha, fechaO, element,activo)
+{
+
+  var valor = "F";
+  if(activo == 1){
+    valor = "-N";
+  }
+
+  var periodo = $("#periodo").val();
+  var tn = $("#tiponom").val();    
+  $.ajax({
+    method: "POST",
+    url: "ajax.php?modo=GuardarTR",
+    data: "codigo="+codigo+"&valor="+valor+"&fecha="+fecha+"&fechaO="+fechaO+"&periodo="+periodo+"&tn="+tn
+  }).done(function(datos){
+    try {
+        var jsonDatos = JSON.parse(datos);
+        if(jsonDatos.error == 1){
+          $(element).css("background-color", "#ff4646");
+        }else {
+          if(activo == 1){
+            $(element).css("background-color", "rgba(112, 242, 63, 0.7)");
+          }else {
+            $(element).css("background-color", "rgba(210, 33, 189, 0.67)");
+          }          
+        }
+    } catch (e) {
+      $(element).css("background-color", "#ff4646");
+    }
+  });
+
+}
+
+
 function ConsultaFrente(codigo, fecha, input){
   var perido, tn, valor;
   valor = $("#"+input).val();
