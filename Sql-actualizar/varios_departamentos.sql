@@ -89,7 +89,7 @@ DECLARE @cols AS NVARCHAR(MAX), @query  AS NVARCHAR(MAX)
     execute(@query);
 
     -----------------------------------------------------OTRO
-    USE [NUEVA_EMPRESA]
+USE [Poner_Nombre_de_la_base_de_datos]
 GO
 /****** Object:  StoredProcedure [dbo].[proc_retardos]    Script Date: 11/04/2018 10:50:25 p. m. ******/
 SET ANSI_NULLS ON
