@@ -21,7 +21,7 @@ if($bd1->rows($sql1) > 0){
         $datosID = $bd1->recorrer($selectID);
         $IDUser = $datosID[0];
         $Server = str_replace("\\", "\\\\", S_DB_SERVER);
-        $insertarConfig = "INSERT INTO config VALUES (NULL, '$Server', '$NEmpresa', '$CDepto', '".S_DB_NOMBRE."', '".S_DB_USER."', '".S_DB_PASS."', '$IDUser',1, 1, 1, 1, 5, '', 0, 0, 0, 0, 0);";//quitar 2
+        $insertarConfig = "INSERT INTO config VALUES (NULL, '$Server', '$NEmpresa', '$CDepto', '".S_DB_NOMBRE."', '".S_DB_USER."', '".S_DB_PASS."', '$IDUser',1, 1, 1, 1, 5, '', 0, 0, 0);";
         if($bd1->query($insertarConfig)){
           echo "1";
           $bd1->close();
