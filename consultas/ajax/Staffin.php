@@ -9,11 +9,11 @@ $valor = "";
 
 if($DepOsub == 1)
 {
-  $ComSql = "LEFT (b.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-  $ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT (".$centro.", ".$MascaraEm.")";
+	$ComSql = "b.centro IN (".$centro.")";
+	$ComSql2 = "centro IN (".$centro.")";
 }else {
-  $ComSql = "b.centro = '".$centro."'";
-  $ComSql2 = "centro = ".$centro."";
+  $ComSql = "b.centro IN (".$centro.")";
+  $ComSql2 = "centro IN (".$centro.")";
 }
 
 $query = "

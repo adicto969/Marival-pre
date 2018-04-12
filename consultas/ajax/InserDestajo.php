@@ -9,7 +9,7 @@ $Columna = $_POST["columna"];
 $codigo = $_POST["codigo"];
 $valor = $_POST["valor"];
 
-$CONSULTA = "SELECT Codigo FROM destajo WHERE Codigo = '$codigo' AND Periodo = '$PC' AND IDEmpresa = '$IDEmpresa' AND Centro = '$centro' AND fecha = '".date("Y")."';";
+$CONSULTA = "SELECT Codigo FROM destajo WHERE Codigo = '$codigo' AND Periodo = '$PC' AND IDEmpresa = '$IDEmpresa' AND Centro IN ($centro) AND fecha = '".date("Y")."';";
 $objBDSQL->consultaBD($CONSULTA);
 $row = $objBDSQL->obtenResult();
 if(empty($row)){

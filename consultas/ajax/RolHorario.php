@@ -30,14 +30,14 @@ if(isset($_POST['buscar'])){
 
 if($DepOsub == 1)
 {
-  $complemento = "LEFT (l.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $complemento = "l.centro IN (".$centro.")";
   $querySQL = "[dbo].[roldehorarioEmp]
               '".$IDEmpresa."',
               '".$centro."',
               '1'";
 
 }else {
-  $complemento = "l.centro = '".$centro."'";
+  $complemento = "l.centro IN (".$centro.")";
   $querySQL = "[dbo].[roldehorarioEmp]
               '".$IDEmpresa."',
               '".$centro."',

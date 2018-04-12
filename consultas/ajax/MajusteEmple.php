@@ -12,9 +12,9 @@ $result['exito'] = 0;
 
 if($DepOsub == 1)
 {
-	$ComSql = "LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$ComSql = "L.centro IN (".$centro.")";
 }else {
-	$ComSql = "L.centro = '".$centro."'";
+	$ComSql = "L.centro IN (".$centro.")";
 }
 
 $query = "
@@ -76,7 +76,7 @@ while($row = $objBDSQL->obtenResult()){
 		}
 
 		$consulta = "IF EXISTS(
-											SELECT ID FROM ajusteempleado WHERE IDEmpleado = ".$nombreA." AND centro = '".$centro."' AND IDEmpresa = ".$IDEmpresa.")
+								SELECT ID FROM ajusteempleado WHERE IDEmpleado = ".$nombreA." AND centro IN '".$centro."' AND IDEmpresa = ".$IDEmpresa.")
 									BEGIN
 										UPDATE ajusteempleado SET PDOM = '".$A1."', DLaborados = '".$A2."', PA = '".$A3."', PP = '".$A4."', centro = '".$centro."' WHERE IDEmpleado = '".$nombreA."' AND centro = '".$centro."' AND IDEmpresa = ".$IDEmpresa."
 									END

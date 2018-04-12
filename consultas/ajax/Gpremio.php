@@ -14,9 +14,9 @@ $resultV = array();
 $resultV['error'] = 0;
 
 if($DepOsub == 1){
-  $ComSql3 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql3 = "Centro IN (".$centro.")";
 }else {
-  $ComSql3 = "Centro = '".$centro."'";
+  $ComSql3 = "Centro IN (".$centro.")";
 }
 
 $consultaD = "SELECT PP, PA

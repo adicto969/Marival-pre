@@ -192,7 +192,7 @@ if($tipo == "destajo"){
                    LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-            			 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.") AND
+            			 L.centro IN (".$Dep.") AND
             			 L.tiponom = '".$tn."' AND
             			 E.activo = 'S'";
       }
@@ -216,7 +216,7 @@ if($tipo == "destajo"){
                    LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-                   LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.") AND
+                   L.centro IN (".$Dep.") AND
                    L.supervisor = '".$supervisor."' AND
                    L.tiponom = '".$tn."' AND
                    E.activo = 'S'";
@@ -225,7 +225,7 @@ if($tipo == "destajo"){
       if($Dep == 'todos' || $Dep == 'TODOS' || $Dep == 'todo' || $Dep == 'TODO'){
 	       $ComSql2 = "";
       }else {
-	       $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
+	       $ComSql2 = "Centro IN (".$Dep.")";
       }
 
   }else {
@@ -246,7 +246,7 @@ if($tipo == "destajo"){
                    LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-            			 L.centro = '".$Dep."' AND
+            			 L.centro IN (".$Dep.") AND
             			 L.tiponom = '".$tn."' AND
                    E.activo = 'S'";
       }
@@ -271,7 +271,7 @@ if($tipo == "destajo"){
                    LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-                   L.centro = '".$Dep."' AND
+                   L.centro IN (".$Dep.") AND
                    L.supervisor = '".$supervisor."' AND
                    L.tiponom = '".$tn."' AND
                    E.activo = 'S'
@@ -282,7 +282,7 @@ if($tipo == "destajo"){
     if($Dep == 'todos' || $Dep == 'TODOS' || $Dep == 'todo' || $Dep == 'TODO'){
 	  $ComSql2 = "";
     }else {
-    	  $ComSql2 = "Centro = '".$Dep."'";
+    	  $ComSql2 = "Centro IN (".$Dep.")";
     }
 
   }
@@ -343,7 +343,7 @@ if($tipo == "destajo"){
     '".$supervisor."',
     '".$IDEmpresa."',
     '".$TN."',
-    'LEFT (L.centro, 10) = LEFT (''".$centro."'', ".$MascaraEm.")',
+    'L.centro IN (".$centro.")',
     '1',
     '1',
     '10',
@@ -351,7 +351,7 @@ if($tipo == "destajo"){
     '',
     '".$ordernar."'
     ";
-    $ComSql = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $ComSql = "Centro IN (".$centro.")";
   }else {
     $queryGeneral = "
     [dbo].[reporte_checadas_excel_ctro]
@@ -361,14 +361,14 @@ if($tipo == "destajo"){
     '".$supervisor."',
     '".$IDEmpresa."',
     '".$TN."',
-    'L.centro = ''".$centro."''',
+    'L.centro IN (".$centro.")',
     '0',
     '1',
     '10',
     '',
     '',
     ''";
-    $ComSql = "Centro = '".$centro."'";
+    $ComSql = "Centro IN (".$centro.")";
   }
 
   $Nresultados = 1;
@@ -439,11 +439,11 @@ if($tipo == "destajo"){
 
   if($DepOsub == 1)
   {
-    $ComSql = "LEFT (llaves.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-    $ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $ComSql = "llaves.centro IN (".$centro.")";
+    $ComSql2 = "centro IN (".$centro.")";
   }else {
-    $ComSql = "llaves.centro = '".$centro."'";
-    $ComSql2 = "centro = '".$centro."'";
+    $ComSql = "llaves.centro IN (".$centro.")";
+    $ComSql2 = "centro IN (".$centro.")";
   }
 
   if($supervisor == 0){
@@ -703,11 +703,11 @@ if($numCol >= 1){
 
   if($DepOsub == 1)
   {
-    $ComSql2 = "LEFT (relch_registro.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
-    $ComSql3 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
+    $ComSql2 = "relch_registro.centro IN (".$Dep.")";
+    $ComSql3 = "centro IN (".$Dep.")";
   }else {
-    $ComSql2 = "relch_registro.centro = '".$Dep."'";
-    $ComSql3 = "centro = '".$Dep."'";
+    $ComSql2 = "relch_registro.centro IN (".$Dep.")";
+    $ComSql3 = "centro IN (".$Dep.")";
   }
 
   if($supervisor == 0){
@@ -815,10 +815,10 @@ if($numCol >= 1){
               '0',
               '".$IDEmpresa."',
               '".$TN."',
-              'LEFT (Llaves.centro, ".$MascaraEm.") = LEFT (''".$centro."'', ".$MascaraEm.")',
+              'Llaves.centro IN (".$centro.")',
               '1'";
 
-      $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $ComSql2 = "Centro IN (".$centro.")";
   }else {
     $querySQL = "[dbo].[reporte_checadas_excel_ctro]
               '".$fecha1."',
@@ -827,10 +827,10 @@ if($numCol >= 1){
               '0',
               '".$IDEmpresa."',
               '".$TN."',
-              'Llaves.centro = ''".$centro."''',
+              'Llaves.centro IN (".$centro.")',
               '0'";
 
-      $ComSql2 = "Centro = '".$centro."'";
+      $ComSql2 = "Centro IN (".$centro.")";
   }
 
   $objBDSQL->consultaBD($querySQL);
@@ -902,7 +902,7 @@ if($numCol >= 1){
                    LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-            			 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+            			 L.centro IN (".$centro.") AND
             			 L.tiponom = '".$TN."' AND
             			 E.activo = 'S'";
     }else {
@@ -912,13 +912,13 @@ if($numCol >= 1){
                    LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-                   LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+                   L.centro IN (".$centro.") AND
                    L.supervisor = '".$supervisor."' AND
                    L.tiponom = '".$TN."' AND
                    E.activo = 'S'";
     }
 
-      $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+      $ComSql2 = "Centro IN (".$centro.")";
   }else {
     if($supervisor == 0){
       $querySQL2 = "
@@ -927,7 +927,7 @@ if($numCol >= 1){
                    LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-            			 L.centro = '".$centro."' AND
+            			 L.centro IN (".$centro.") AND
             			 L.tiponom = '".$TN."' AND
                    E.activo = 'S'";
     }else {
@@ -937,14 +937,14 @@ if($numCol >= 1){
                    LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
                    WHERE L.empresa = ".$IDEmpresa." AND
-                   L.centro = '".$centro."' AND
+                   L.centro IN (".$centro.") AND
                    L.supervisor = '".$supervisor."' AND
                    L.tiponom = '".$TN."' AND
                    E.activo = 'S'
                    ";
     }
 
-      $ComSql2 = "Centro = '".$centro."'";
+      $ComSql2 = "Centro IN (".$centro.")";
   }
   $contador = 1;
   $FILA = 7;

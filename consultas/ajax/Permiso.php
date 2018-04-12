@@ -11,11 +11,11 @@ $Periodo = $_POST['periodo'];
 $Tn = $_POST['TN'];
 
 if($DepOsub == 1){
-    $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-    $ComSql1 = "LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql2 = "Centro IN (".$centro.")";
+  $ComSql1 = "L.centro IN (".$centro.")";
 }else {
-    $ComSql2 = "Centro = '".$centro."'";
-    $ComSql1 = "L.centro = '".$centro."'";
+    $ComSql2 = "Centro IN (".$centro.")";
+    $ComSql1 = "L.centro IN (".$centro.")";
 }
 if($Periodo <= 24){
 $_fechas = periodo($Periodo, $Tn);

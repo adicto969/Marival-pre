@@ -17,11 +17,11 @@ $resultV = array();
 $resultV['error'] = 0;
 
 if($DepOsub == 1){
-  $ComSql2 = "LEFT (CENTRO, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-  $ComSql3 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql2 = "CENTRO IN (".$centro.")";
+  $ComSql3 = "Centro IN (".$centro.")";
 }else {
-  $ComSql2 = "CENTRO = '".$centro."'";
-  $ComSql3 = "Centro = '".$centro."'";
+  $ComSql2 = "CENTRO IN (".$centro.")";
+  $ComSql3 = "CENTRO IN (".$centro.")";
 }
 
 $consultaD = "SELECT valor

@@ -92,6 +92,7 @@ if(isset($_SESSION['IDUser'])){
   $datos = $objBDSQL->obtenResult();
   if(empty($datos)){
     $error = "NO SE ENCONTRO NOMBRE DEL DEPARTAMENTO (CONSULTA GENERAL)";
+    $error = "VARIOS";
     $NomDep = $error;
   }else {
     $NomDep = $datos['nomdepto'];

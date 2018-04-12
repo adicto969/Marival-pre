@@ -292,7 +292,7 @@ if($DepOsub == 1)
   '".$supervisor."',
   '".$IDEmpresa."',
   '".$_tipoNom."',
-  'LEFT (L.centro, 10) = LEFT (''".$centro."'', ".$MascaraEm.")',
+  'L.centro IN (".$centro.")',
   '1',
   '".$pagina."',
   '".$cantidadXpagina."',
@@ -300,7 +300,8 @@ if($DepOsub == 1)
   '".$textExtraPro."',
   '".$ordernar."'
   ";
-  $ComSql = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  //$ComSql = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "Centro IN (".$centro.")";
 }else {
   $queryGeneral = "
   [dbo].[reporte_checadas_excel_ctro]
@@ -310,14 +311,14 @@ if($DepOsub == 1)
   '".$supervisor."',
   '".$IDEmpresa."',
   '".$_tipoNom."',
-  'L.centro = ''".$centro."''',
+  'L.centro IN (".$centro.")',
   '0',
   '".$pagina."',
   '".$cantidadXpagina."',
   '".$busqueda."',
   '".$textExtraPro."',
   '".$ordernar."'";
-  $ComSql = "Centro = '".$centro."'";
+  $ComSql = "Centro IN (".$centro.")";
 }
 /////////////Periodo y TipoNomina/////////
 $_UPDATEPYT = "UPDATE config SET PC = $_periodo, TN = $_tipoNom WHERE IDUser = '".$_SESSION['IDUser']."';";

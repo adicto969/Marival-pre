@@ -19,10 +19,10 @@ $Fch = $ayo.$mes.$dia;
 if($DepOsub == 1)
 {
 	$ComSql = "LEFT (relch_registro.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
-	$ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$ComSql2 = "centro IN (".$centro.")";
 }else {
 	$ComSql = "relch_registro.centro = '".$Dep."'";
-	$ComSql2 = "centro = '".$centro."'";
+	$ComSql2 = "centro IN (".$centro.")";
 }
 
 if($Dep == "todos" || $Dep == "todo" || $Dep == "TODOS" || $Dep == "TODO"){

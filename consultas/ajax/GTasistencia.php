@@ -53,7 +53,7 @@ if($DepOsub == 1){
           '".$supervisor."',
           '".$IDEmpresa."',
           '".$tipoNom."',
-          'LEFT (L.centro, 10) = LEFT (''".$centro."'', ".$MascaraEm.")',
+          'L.centro IN (".$centro.")',
           '1',
           '1',
           '10',
@@ -62,7 +62,7 @@ if($DepOsub == 1){
           '".$ordernar."'
           ";
 
-    $LCentro = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $LCentro = "Centro IN (".$centro.")";
 }else {
   $SQLT = "[dbo].[reporte_checadas_excel_ctro]
           '".$fecha1."',
@@ -71,7 +71,7 @@ if($DepOsub == 1){
           '".$supervisor."',
           '".$IDEmpresa."',
           '".$tipoNom."',
-          'L.centro = ''".$centro."''',
+          'L.centro IN (".$centro.")',
           '0',
           '1',
           '10',
@@ -79,7 +79,7 @@ if($DepOsub == 1){
           '',
           ''";
 
-    $LCentro = "Centro = '".$centro."'";
+    $LCentro = "Centro IN (".$centro.")";
 }
 
 

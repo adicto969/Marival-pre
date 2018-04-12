@@ -6,9 +6,9 @@ $Tnn = $_POST['Tn'];
 
 if($DepOsub == 1)
 {
-	$ComSql = "LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$ComSql = "L.centro IN (".$centro.")";
 }else {
-	$ComSql = "L.centro = '".$centro."'";
+	$ComSql = "L.centro IN (".$centro.")";
 }
 
 $consulta = "SELECT TOP 5 E.codigo, E.nombre + ' ' + E.ap_paterno + ' ' + E.ap_materno AS nombre

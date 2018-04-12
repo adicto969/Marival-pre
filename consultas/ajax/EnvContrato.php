@@ -14,13 +14,13 @@ $correo = $_POST["userN"];
 $porcentaje = $_POST['porC'];
 
 if($DepOsub == 1){
-  $compSql = "LEFT (llaves.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-  $compSql2 = "LEFT (b.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-  $ComSql3 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $compSql = "llaves.centro IN (".$centro.")";
+  $compSql2 = "b.centro IN (".$centro.")";
+  $ComSql3 = "centro IN (".$centro.")";
 }else {
-  $compSql = "llaves.centro = '".$centro."'";
-  $compSql2 = "b.centro = '".$centro."'";
-  $ComSql3 = "centro = '".$centro."'";
+  $compSql = "llaves.centro IN (".$centro.")";
+  $compSql2 = "b.centro IN (".$centro.")";
+  $ComSql3 = "centro IN (".$centro.")";
 }
 
 

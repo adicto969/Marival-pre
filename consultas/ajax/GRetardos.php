@@ -166,7 +166,7 @@ if($DepOsub == 1)
           'min',
           '1'
   ";
-  $ComSql = "LEFT (Dep, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "Dep IN (".$centro.")";
 }else {
   $query = "[dbo].[proc_retardos]
           '".$F1."',
@@ -179,7 +179,7 @@ if($DepOsub == 1)
           'min',
           '0'
   ";
-  $ComSql = "Dep = '".$centro."'";
+  $ComSql = "Dep IN (".$centro.")";
 }
 
 if($Tn == 1){

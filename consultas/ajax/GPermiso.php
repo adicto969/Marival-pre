@@ -81,9 +81,9 @@ if($Periodo > 24 || $Tn == 1){
 
 if($DepOsub == 1)
 {
-	$ComSql = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$ComSql = "Centro IN (".$centro.")";
 }else {
-	$ComSql = "Centro = '".$centro."'";
+	$ComSql = "Centro IN (".$centro.")";
 }
 
 $fechaSuma = "";

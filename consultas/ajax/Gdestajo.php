@@ -45,7 +45,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-          			 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+          			 L.centro IN (".$centro.") AND
           			 L.tiponom = '".$Tn."' AND
           			 E.activo = 'S'";
     }
@@ -68,7 +68,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-                 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+                 L.centro IN (".$centro.") AND
                  L.supervisor = '".$supervisor."' AND
                  L.tiponom = '".$Tn."' AND
                  E.activo = 'S'";
@@ -80,7 +80,7 @@ if($DepOsub == 1){
   if($Centro == 'todos' || $Centro == 'TODOS' || $Centro == 'todo' || $Centro == 'TODO'){
 	  $ComSql2 = "";
   }else {
-	  $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	  $ComSql2 = "Centro IN (".$centro.")";
   }
 
 }else {
@@ -101,7 +101,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-          			 L.centro = '".$centro."' AND
+          			 L.centro IN (".$centro.") AND
           			 L.tiponom = '".$Tn."' AND
                  E.activo = 'S'";
     }
@@ -126,7 +126,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajo AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-                 L.centro = '".$centro."' AND
+                 L.centro IN (".$centro.") AND
                  L.supervisor = '".$supervisor."' AND
                  L.tiponom = '".$Tn."' AND
                  E.activo = 'S'
@@ -138,7 +138,7 @@ if($DepOsub == 1){
   if($Centro == 'todos' || $Centro == 'TODOS' || $Centro == 'todo' || $Centro == 'TODO'){
 	  $ComSql2 = "";
   }else {
-	  $ComSql2 = "Centro = '".$centro."'";
+	  $ComSql2 = "Centro IN (".$centro.")";
   }
 
 }

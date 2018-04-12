@@ -94,9 +94,9 @@ if(isset($_SESSION['IDUser'])){
 
   if($DepOsub == 1)
   {
-    $comSql = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $comSql = "centro IN (".$centro.")";
   }else {
-    $comSql = "centro = '".$centro."'";
+    $comSql = "centro IN (".$centro.")";
   }
   //////////////////////////////////////////////////////////////////////////////////////////
   //////////////////////////////verificar contratos vencidos a 5 dia /////////////////////////////////

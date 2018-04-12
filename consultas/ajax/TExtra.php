@@ -98,7 +98,7 @@ if($DepOsub == 1){
             '0',
             '".$IDEmpresa."',
             '".$tipoNom."',
-            'LEFT (L.centro, ".$MascaraEm.") = LEFT (''".$centro."'', ".$MascaraEm.")',
+            'L.centro IN (".$centro.")',
             '1',
             '1',
             '1',
@@ -106,7 +106,7 @@ if($DepOsub == 1){
             '',
             ''";
 
-    $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $ComSql2 = "Centro IN (".$centro.")";
 }else {
   $querySQL = "[dbo].[reporte_checadas_excel_ctro]
             '".$fecha1."',
@@ -115,7 +115,7 @@ if($DepOsub == 1){
             '0',
             '".$IDEmpresa."',
             '".$tipoNom."',
-            'L.centro = ''".$centro."''',
+            'L.centro IN (".$centro.")',
             '0',
             '1',
             '1',
@@ -123,7 +123,7 @@ if($DepOsub == 1){
             '',
             ''";
 
-    $ComSql2 = "Centro = '".$centro."'";
+    $ComSql2 = "Centro IN (".$centro.")";
 }
 
 ///////Sacar el tiempo extra

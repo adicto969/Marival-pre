@@ -90,7 +90,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajos AS D ON D.Codigo = L.codigo AND D.empresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-          			 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+          			 L.centro IN (".$centro.") AND
           			 L.tiponom = '".$tnomina."' AND
           			 E.activo = 'S'";
   }else {
@@ -100,13 +100,13 @@ if($DepOsub == 1){
                  LEFT JOIN destajos AS D ON D.Codigo = L.codigo AND D.empresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-                 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+                 L.centro IN (".$centro.") AND
                  L.supervisor = '".$supervisor."' AND
                  L.tiponom = '".$tnomina."' AND
                  E.activo = 'S'";
   }
 
-    $ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql2 = "Centro IN (".$centro.")";
 }else {
   if($supervisor == 0){
     $querySQL3 = "
@@ -115,7 +115,7 @@ if($DepOsub == 1){
                  LEFT JOIN destajos AS D ON D.Codigo = L.codigo AND D.empresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-          			 L.centro = '".$centro."' AND
+          			 L.centro IN (".$centro.") AND
           			 L.tiponom = '".$tnomina."' AND
                  E.activo = 'S'";
   }else {
@@ -125,14 +125,14 @@ if($DepOsub == 1){
                  LEFT JOIN destajos AS D ON D.Codigo = L.codigo AND D.empresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."'
 
                  WHERE L.empresa = ".$IDEmpresa." AND
-                 L.centro = '".$centro."' AND
+                 L.centro IN (".$centro.") AND
                  L.supervisor = '".$supervisor."' AND
                  L.tiponom = '".$tnomina."' AND
                  E.activo = 'S'
                  ";
   }
 
-    $ComSql2 = "Centro = '".$centro."'";
+    $ComSql2 = "Centro IN (".$centro.")";
 }
 $consultaCa = "SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = 'destajos'";
 $reultadoo = $objBDSQL->consultaBD($consultaCa);

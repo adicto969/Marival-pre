@@ -22,11 +22,11 @@ $busquedaV = "";
 
 if($DepOsub == 1)
 {
-  $ComSql = "LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-  $ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "L.centro IN (".$centro.")";
+  $ComSql2 = "centro IN (".$centro.")";
 }else {
-  $ComSql = "L.centro = '".$centro."'";
-  $ComSql2 = "centro = '".$centro."'";
+  $ComSql = "L.centro IN (".$centro.")";
+  $ComSql2 = "centro IN (".$centro.")";
 }
 
 if(isset($_POST['buscar'])){

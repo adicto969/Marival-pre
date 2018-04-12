@@ -5,9 +5,9 @@ $bdSQL = new ConexionS();
 
 if($DepOsub == 1)
 {
-  $ComSql = "LEFT (b.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "b.centro IN (".$centro.")";
 }else {
-  $ComSql = "b.centro = '".$centro."'";
+  $ComSql = "b.centro IN (".$centro.")";
 }
 
 $sql = "

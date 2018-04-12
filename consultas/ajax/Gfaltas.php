@@ -36,9 +36,9 @@ if(isset($_POST['uno'])){
                 AND E.empresa = '".$IDEmpresa."'
                 ".$compleSuper."
                 AND L.tiponom = '".$tipoNom."'
-                AND L.centro = '".$centro."'
+                AND L.centro IN (".$centro.")
             ORDER BY E.codigo";
-    $LCentro = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+    $LCentro = "Centro IN (".$centro.")";
   }else {
     $SQLT = "SELECT DISTINCT E.codigo, E.sueldo AS 'Sueldo', R.checada
             FROM empleados AS E
@@ -49,10 +49,10 @@ if(isset($_POST['uno'])){
             	  AND E.empresa = '".$IDEmpresa."'
                   ".$compleSuper."
             	  AND L.tiponom = '".$tipoNom."'
-            	  AND LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")
+            	  AND L.centro IN (".$centro.")
             ORDER BY E.codigo";
 
-    $LCentro = "Centro = '".$centro."'";
+    $LCentro = "Centro IN (".$centro.")";
   }
 
 
@@ -75,10 +75,10 @@ if(isset($_POST['uno'])){
               '".$supervisor."',
               '".$IDEmpresa."',
               '".$tipoNom."',
-              'LEFT (Llaves.centro, ".$MascaraEm.") = LEFT (''".$centro."'', ".$MascaraEm.")',
+              'Llaves.centro IN (".$centro.")',
               '1'";
 
-      $LCentro = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+              $LCentro = "Centro IN (".$centro.")";
   }else {
     $SQLT = "[dbo].[reporte_checadas_excel_ctro]
               '".$fecha1."',
@@ -87,10 +87,10 @@ if(isset($_POST['uno'])){
               '".$supervisor."',
               '".$IDEmpresa."',
               '".$tipoNom."',
-              'Llaves.centro = ''".$centro."''',
+              'Llaves.centro IN (".$centro.")',
               '0'";
 
-      $LCentro = "Centro = '".$centro."'";
+      $LCentro = "Centro IN (".$centro.")";
   }
 }
 

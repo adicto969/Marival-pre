@@ -21,11 +21,11 @@ $BTN = '<button class="btn" id="btnAjusEmp" onclick="GajusteEmple()" style="marg
 
 if($DepOsub == 1)
 {
-	$complementoSql = "LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
-	$ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$complementoSql = "L.centro IN (".$centro.")";
+	$ComSql2 = "centro IN (".$centro.")";
 }else {
-	$complementoSql = "L.centro = '".$centro."'";
-	$ComSql2 = "centro = '".$centro."'";
+	$complementoSql = "L.centro IN (".$centro.")";
+	$ComSql2 = "centro IN (".$centro.")";
 }
 
 $busqueda = "";

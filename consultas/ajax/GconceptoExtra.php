@@ -68,7 +68,7 @@ if($DepOsub == 1){
 									 LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
 									 WHERE L.empresa = ".$IDEmpresa." AND
-									 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+									 L.centro IN (".$centro.") AND
 									 L.tiponom = '".$TN."' AND
 									 E.activo = 'S'";
 		}
@@ -90,7 +90,7 @@ if($DepOsub == 1){
 									 LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
 									 WHERE L.empresa = ".$IDEmpresa." AND
-									 LEFT (L.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.") AND
+									 L.centro IN (".$centro.") AND
 									 L.supervisor = '".$supervisor."' AND
 									 L.tiponom = '".$TN."' AND
 									 E.activo = 'S'";
@@ -98,7 +98,7 @@ if($DepOsub == 1){
 
 	}
 
-		$ComSql2 = "LEFT (Centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+	$ComSql2 = "Centro IN (".$centro.")";
 }else {
 	if($supervisor == 0){
 		if($Centro == 'todos' || $Centro == 'TODOS' || $Centro == 'todo' || $Centro == 'TODO'){
@@ -117,7 +117,7 @@ if($DepOsub == 1){
 									 LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
 									 WHERE L.empresa = ".$IDEmpresa." AND
-									 L.centro = '".$centro."' AND
+									 L.centro IN (".$centro.") AND
 									 L.tiponom = '".$TN."' AND
 									 E.activo = 'S'";
 		}
@@ -140,7 +140,7 @@ if($DepOsub == 1){
 									 LEFT JOIN JExtras AS D ON D.Codigo = L.codigo AND D.IDEmpresa = L.empresa AND D.Centro = L.centro AND D.fecha = '".date("Y")."' AND D.Periodo = '".$PC."'
 
 									 WHERE L.empresa = ".$IDEmpresa." AND
-									 L.centro = '".$centro."' AND
+									 L.centro IN (".$centro.") AND
 									 L.supervisor = '".$supervisor."' AND
 									 L.tiponom = '".$TN."' AND
 									 E.activo = 'S'
@@ -149,7 +149,7 @@ if($DepOsub == 1){
 
 	}
 
-		$ComSql2 = "Centro = '".$centro."'";
+		$ComSql2 = "Centro IN (".$centro.")";
 }
 
 $objBDSQL->consultaBD($querySQL1.$querySQL2);

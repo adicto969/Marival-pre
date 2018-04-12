@@ -21,10 +21,10 @@ $bd1->close();
 
 if($DepOsub == 1)
 {
-  $ComSql = "LEFT (b.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "b.centro IN (".$centro.")";
   $ComSql99 = "LEFT (S.centro, ".$MascaraEm.") = LEFT (b.centro, ".$MascaraEm.")";
 }else {
-  $ComSql = "b.centro = '".$centro."'";
+  $ComSql = "b.centro IN (".$centro.")";
   $ComSql99 = "S.centro = b.centro";
 }
 

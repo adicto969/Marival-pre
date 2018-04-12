@@ -17,8 +17,8 @@ if($DepOsub == 1)
   $ComSql = "LEFT (llaves.centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
   $ComSql2 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
 }else {
-  $ComSql = "llaves.centro = '".$centro."'";
-  $ComSql2 = "centro = '".$centro."'";
+  $ComSql = "llaves.centro IN (".$centro.")";
+  $ComSql2 = "centro IN (".$centro.")";
 }
 
 $query = "

@@ -1,0 +1,4 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/04/2018 08:44:08 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/04/2018 09:31:39 PM] - SE HA LOGEADO EL USUARIO: NvariosCentros

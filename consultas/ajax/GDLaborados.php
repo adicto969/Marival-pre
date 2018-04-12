@@ -22,9 +22,9 @@ if($Tn == 1){
 
 if($DepOsub == 1)
 {
-	$ComSql = "LEFT (relch_registro.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
+	$ComSql = "relch_registro.centro IN (".$Dep.")";
 }else {
-	$ComSql = "relch_registro.centro = '".$Dep."'";
+	$ComSql = "relch_registro.centro IN (".$Dep.")";
 }
 
 $queryD = "SELECT LTRIM ( RTRIM ( nomdepto ) ) AS nomdepto FROM centros WHERE centro = '".$Dep."' AND empresa = '".$IDEmpresa."';";

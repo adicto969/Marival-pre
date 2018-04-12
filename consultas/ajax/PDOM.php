@@ -179,11 +179,11 @@ else if($nuD == 2){
 
 if($DepOsub == 1)
 {
-  $ComSql2 = "LEFT (relch_registro.centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
-  $ComSql3 = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$Dep."', ".$MascaraEm.")";
+  $ComSql2 = "relch_registro.centro IN (".$Dep.")";
+  $ComSql3 = "centro IN (".$Dep.")";
 }else {
-  $ComSql2 = "relch_registro.centro = '".$Dep."'";
-  $ComSql3 = "centro = '".$Dep."'";
+  $ComSql2 = "relch_registro.centro IN (".$Dep.")";
+  $ComSql3 = "centro IN (".$Dep.")";
 }
 
 if($Dep == "TODOS" || $Dep == "TODO" || $Dep == "todos" || $Dep == "todo"){

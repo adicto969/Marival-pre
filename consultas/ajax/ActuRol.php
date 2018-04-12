@@ -21,13 +21,13 @@ $objBDSQL->conectarBD();
                '".$centro."',
                '1'";
 
-  $ComSql = "LEFT (centro, ".$MascaraEm.") = LEFT ('".$centro."', ".$MascaraEm.")";
+  $ComSql = "centro IN (".$centro.")";
  }else {
    $querySQL = "[dbo].[roldehorarioEmp]
                '".$IDEmpresa."',
                '".$centro."',
                '0'";
-  $ComSql = "centro = '".$centro."'";
+    $ComSql = "centro IN (".$centro.")";
  }
 
 
