@@ -12,6 +12,7 @@ $resultV['error'] = 0;
 $resultV['contenido'] = '';
 $resultV['NumeroResultado'] = 0;
 
+$datosInsidencia = [];
 $pagina = $_POST['pagina'];
 $cantidadXpagina = $_POST['cantidadXpagina'];
 $ordernar = $_POST["order"];
@@ -59,7 +60,7 @@ $_nResultados = 1;
 $_cabecera = "<tr>";
 $_cabeceraD = "<tr><th></th><th></th><th></th><th></th>";
 $_cabeceraD = '<tr>
-<th colspan="4" id="CdMas" style="background-color: white;
+<th colspan="3" id="CdMas" style="background-color: white;
 border-top: 1px solid transparent; border-left: 1px solid transparent;"></th>';
 $_cuerpo = "";
 $_Fecha0 = "";
@@ -175,6 +176,7 @@ $_fecha2 = $_ayoB.$_mesB.$_diaB;
 $fechAumen = $_ayoC."/".$_mesC."/".$_diaC;
 #####################################################
 ///////////////INCRUSTRAR CHECADAS//////////
+/*
 $Jcodigos = file_get_contents("datos/empleados.json");
 $datosJSON = json_decode($Jcodigos, true);
 $contarJSON = count($datosJSON["empleados"]);
@@ -279,7 +281,7 @@ for($j = 0; $j <= $contarJSON - 1; $j++){
 
 if($varificarIns == false){
   $resultV['contenido'] .= "<script >alert ('ERROR - Verifica los parametros de los empleados(cargarChecadas)');</script>";
-}
+}*/
 ///////////////////////////////////////////
 
 if($DepOsub == 1)
@@ -434,6 +436,180 @@ if($estadoP['estado'] == 1){
 
 ///////////////////////////////////////////////////////////////
 
+////////////////////CONSULTA DE INSIDENCIAS////////////////////
+
+$consultaEstatus = "SELECT codigo, nombre, fechaO, valor, Centro, Autorizo1, Autorizo2, Autorizo3 FROM datosanti WHERE periodoP = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['codigo']."-".$row['nombre']."-A"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+
+$consultaEstatus = "SELECT codigo, nombre, fechaO, valor, Centro FROM datos WHERE periodoP = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['codigo']."-".$row['nombre']."-B"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+
+$consultaEstatus = "SELECT codigo, fecha, valor, Centro FROM dobTurno WHERE periodo = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['codigo']."-".$row['fecha']."-C"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+
+$consultaEstatus = "SELECT codigo, fecha, valor, Centro FROM deslaborado WHERE periodo = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['codigo']."-".$row['fecha']."-D"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+
+$consultaEstatus = "SELECT codigo, PP, PA, Centro FROM premio WHERE Periodo = '".$_periodo."' and TN = '".$_tipoNom."' and IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['codigo']."-E"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+
+$consultaEstatus = "SELECT IDEmpleado, PDOM, DLaborados, PA, PP, centro FROM ajusteempleado WHERE IDEmpresa = ".$IDEmpresa;
+$bloquear = '';
+$resultC = $objBDSQL->consultaBD($consultaEstatus);
+
+if($resultC['error'] == 1){
+  $file = fopen("log/log".date("d-m-Y").".txt", "a");
+  fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['SQLSTATE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['CODIGO'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$resultC['MENSAJE'].PHP_EOL);
+  fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$consultaEstatus.PHP_EOL);
+  fclose($file);
+  $resultV['error'] = 1;
+  echo json_encode($resultV);
+  /////////////////////////////
+  $objBDSQL->cerrarBD();
+  $objBDSQL2->cerrarBD();
+
+  exit();
+}
+while ($row = $objBDSQL->obtenResult()){
+  $datosInsidencia[$row['IDEmpleado']."-F"] = $row;
+}
+$objBDSQL->liberarC();
+
+####################################################################
+/*print_r($datosInsidencia);
+print_r($datosInsidencia["333-26-01-2017-B"]);
+if(array_key_exists("333-26-01-2017-B", $datosInsidencia)){
+  echo "existe";
+}else {
+  echo "no existe";
+}
+exit();*/
+///////////////////////////////////////////////////////////////
+
+
 $_HTML = '
       <div style="display:flex;width: auto;float: right;border: 1px solid rgba(0, 0, 0, .2);">
         <div onclick="ant();" style="padding: 10px 13px 0px 13px;border-right: 1px solid rgba(0, 0, 0, 0.2);cursor: pointer;"><i class="material-icons">chevron_left</i></div>
@@ -490,7 +666,7 @@ while ($row=$objBDSQL->obtenResult()) {
   $_cuerpo .= "<tr>";
     foreach (array_keys($row) as $value) {
       if($_nResultados==1){
-        if($value == 'codigo' ||	$value == 'Nombre' ||	$value == 'Sueldo' ||	$value == 'Tpo' || $value == 'TOTAL_REGISTROS' || $value == 'PAGINA'){
+        if($value == 'codigo' ||	$value == 'Nombre' ||	$value == 'Sueldo' ||	$value == 'Tpo' || $value == 'TOTAL_REGISTROS' || $value == 'PAGINA' || $value == 'centro'){
 
         }else {
           $_date = str_ireplace('/', '-', $value);
@@ -501,7 +677,7 @@ while ($row=$objBDSQL->obtenResult()) {
           $_arrayCabeceraD .= '<input type = "hidden" name="CabeceraD[]" value="'.$_FechaND.'">';
         }
 
-        if($value == 'TOTAL_REGISTROS' || $value == 'PAGINA'){
+        if($value == 'TOTAL_REGISTROS' || $value == 'PAGINA' || $value == 'centro' ||	$value == 'Sueldo'){
 
         }else {
           $_cabecera .= "<th>".$value."</th>";
@@ -509,10 +685,10 @@ while ($row=$objBDSQL->obtenResult()) {
         }
       }
 
-      if($value == 'TOTAL_REGISTROS' || $value == 'PAGINA'){
+      if($value == 'TOTAL_REGISTROS' || $value == 'PAGINA' || $value == 'centro' ||	$value == 'Sueldo'){
 
-      }else if($value == 'codigo' ||	$value == 'Nombre' ||	$value == 'Sueldo' ||	$value == 'Tpo'){
-        $_cuerpo .= "<td>".utf8_encode($row[$value])."</td>";
+      }else if($value == 'codigo' ||	$value == 'Nombre' /*||	$value == 'Sueldo'*/ ||	$value == 'Tpo'){
+        $_cuerpo .= "<td title='Centro: ".$row['centro']."'>".utf8_encode($row[$value])."</td>";
       }else {
         $tmp_valorC = "";
         $_FechaCol = str_replace("/", "-", $value);
@@ -524,75 +700,54 @@ while ($row=$objBDSQL->obtenResult()) {
             $_FechaNDQ = $_dias[$_DiaNumero-1];
         }
 
-        $_queryDatos = "
-          SELECT
-            (SELECT TOP(1) valor FROM datosanti WHERE codigo = '".$row['codigo']."' AND nombre = '".str_replace("/", "-", $value)."' and periodoP = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = '".$IDEmpresa."' and ".$ComSql.") AS 'A',
-            (SELECT TOP(1) valor FROM datos WHERE codigo = '".$row['codigo']."' AND nombre = '".str_replace("/", "-", $value)."' and periodoP = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = '".$IDEmpresa."' and ".$ComSql.") AS 'B',
-            (SELECT TOP(1) valor FROM datosanti WHERE codigo = '".$row['codigo']."' AND nombre = '".str_replace("/", "-", $value)."' and periodoP = '".$_periodo."' and tipoN = '".$_tipoNom."' and IDEmpresa = '".$IDEmpresa."' and ".$ComSql." and Autorizo1 = 1) AS 'C',
-            (SELECT TOP(1) valor FROM dobTurno WHERE codigo = '".$row['codigo']."' AND fecha = '".str_replace("/", "-", $value)."' and periodo = '".$_periodo."' and tipoN = '".$_tipoNom."' AND IDEmpresa = '".$IDEmpresa."' AND ".$ComSql.") AS 'D',
-            (SELECT TOP(1) valor FROM deslaborado WHERE codigo = ".$row['codigo']." AND fecha = '".str_replace("/", "-", $value)."' AND periodo = $_periodo AND tipoN = $_tipoNom AND IDEmpresa = '".$IDEmpresa."' AND ".$ComSql.") AS 'E',
-            (SELECT TOP(1) (Convert(varchar(5), PP)+'|'+Convert(varchar(5), PA)) as 'B' FROM premio WHERE codigo = '".$row['codigo']."' and Periodo = '".$_periodo."' and TN = '".$_tipoNom."' and ".$ComSql." and IDEmpresa = '".$IDEmpresa."') AS 'F',
-            (SELECT TOP(1) (Convert(varchar(5), PP)+'|'+Convert(varchar(5), PA)) as 'B' FROM ajusteempleado WHERE IDEmpleado = '".$row['codigo']."' and ".$ComSql." and IDEmpresa = '".$IDEmpresa."') AS 'G',
-            (SELECT TOP(1) (Convert(varchar(5), PDOM)+'|'+Convert(varchar(5), DLaborados)) as 'B' FROM ajusteempleado WHERE IDEmpleado = '".$row['codigo']."' and ".$ComSql." and IDEmpresa = '".$IDEmpresa."') AS 'H'
-        ";
-        //(SELECT TOP(1) ".$_FechaNDQ." FROM relacionempfrente WHERE Codigo = '".$row['codigo']."' AND ".$ComSql." AND IDEmpresa = '".$IDEmpresa."') AS 'D',
-
-        $consultaMedi = $objBDSQL2->consultaBD2($_queryDatos);
-
-        if($consultaMedi['error'] == 1){
-          $file = fopen("log/log".date("d-m-Y").".txt", "a");
-        	fwrite($file, ":::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::".PHP_EOL);
-        	fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$consultaMedi['SQLSTATE'].PHP_EOL);
-        	fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$consultaMedi['CODIGO'].PHP_EOL);
-        	fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - '.$consultaMedi['MENSAJE'].PHP_EOL);
-        	fwrite($file, '['.date('d/m/Y h:i:s A').']'.' - CONSULTA: '.$_queryDatos.PHP_EOL);
-        	fclose($file);
-        	$resultV['error'] = 1;
-        	echo json_encode($resultV);
-        	/////////////////////////////
-        	$objBDSQL->cerrarBD();
-        	$objBDSQL2->cerrarBD();
-
-        	exit();
-        }else {
-          $row2=$objBDSQL2->obtenResult2();
-          $objBDSQL2->liberarC2();
-        }
+        $fechaInsi = str_replace("/", "-", $value);
 
         ##################################################
         //VERIFICAR LOS DATOS EN LAS TABLAS EXTRAS
         ##################################################
         $_colorF = 0;
+        $desLab = 0;
         $_valorC = "";
         $_PPPAempleado = explode('|', '0|0');
         $_PPPA = explode('|', '0|0');
         $_PDOM_DLabora = explode('|', '0|0');
-        if(!empty($row2['A'])){
+        if(array_key_exists($row['codigo']."-".$fechaInsi."-A", $datosInsidencia)){
           $_colorF = 1;
-        }
-        if(!empty($row2['B'])){
-          if($row2['B'] == '-n' || $row2['B'] == '-N'){
+        }        
+
+        if(array_key_exists($row['codigo']."-".$fechaInsi."-B", $datosInsidencia)){          
+          if($datosInsidencia[$row['codigo']."-".$fechaInsi."-B"]["valor"] == '-n' || $datosInsidencia[$row['codigo']."-".$fechaInsi."-B"]["valor"] == '-N'){
 
           }else {
-              $_valorC = $row2['B'];
+              $_valorC = $datosInsidencia[$row['codigo']."-".$fechaInsi."-B"]["valor"];
           }
         }
-        if(!empty($row2['C'])){
-          if($row2['C'] == '-n' || $row2['C'] == '-N'){
+
+        if(array_key_exists($row['codigo']."-".$fechaInsi."-A", $datosInsidencia)){
+          if(($datosInsidencia[$row['codigo']."-".$fechaInsi."-A"]["valor"] == '-n' || $datosInsidencia[$row['codigo']."-".$fechaInsi."-A"]["valor"] == '-N')){
 
           }else {
-            $_valorC = $row2['C'];
+            if($datosInsidencia[$row['codigo']."-".$fechaInsi."-A"]["Autorizo1"] == 1)
+              $_valorC = $datosInsidencia[$row['codigo']."-".$fechaInsi."-A"]["valor"];
           }
         }
-        if(!empty($row2['F'])){
-            $_PPPA = explode('|', $row2['F']);
-        }
-        if(!empty($row2['G'])){
-            $_PPPAempleado = explode('|', $row2['G']);
+
+        if(array_key_exists($row['codigo']."-".$fechaInsi."-D", $datosInsidencia))
+        {
+          $desLab = $datosInsidencia[$row['codigo']."-".$fechaInsi."-D"]["valor"];
         }
 
-        if(!empty($row2['H'])){
-          $_PDOM_DLabora = explode('|', $row2['H']);
+        if(array_key_exists($row['codigo']."-E", $datosInsidencia)){
+          $_PPPA = $datosInsidencia[$row['codigo']."-E"]["PP"]."|".$datosInsidencia[$row['codigo']."-E"]["PA"];
+          $_PPPA = explode('|', $_PPPA);
+        }
+      
+        if(array_key_exists($row['codigo']."-F", $datosInsidencia)){
+          $_PPPAempleado = $datosInsidencia[$row['codigo']."-F"]["PP"]."|".$datosInsidencia[$row['codigo']."-F"]["PA"];
+          $_PPPAempleado = explode('|', $_PPPAempleado);
+
+          $_PDOM_DLabora = $datosInsidencia[$row['codigo']."-F"]["PDOM"]."|".$datosInsidencia[$row['codigo']."-F"]["DLaborados"];
+          $_PDOM_DLabora = explode('|', $_PDOM_DLabora);
         }
 
         ##################################################
@@ -614,7 +769,7 @@ while ($row=$objBDSQL->obtenResult()) {
                           </td>
                          ';
             }else {
-              if($row2['E'] == 1){
+              if($desLab == 1){
                 $_cuerpo .= '<td class="Aline" style="height: 74px;">
                               <p style="padding: 0; margin: 0; text-align: center;">
                                 <input type="checkbox" '.$bloquear.' checked="checked" id="'.$row['codigo'].$_FechaCol.'DL" />
@@ -649,7 +804,7 @@ while ($row=$objBDSQL->obtenResult()) {
                 $_cuerpo .= '<td class="Aline" style="height: 74px;">
                             '.$row[$value].'</td>';
               }else {
-                if($row2['D'] == "1"){
+                if($desLab == 1){
                   $_cuerpo .= '<td class="Aline" style="height: 74px;">
                   <p style="padding: 0;margin: 0;text-align: center;">
                     <input type="checkbox" checked="checked" id="'.$row["codigo"].$_FechaCol.'DT"   />
@@ -676,7 +831,7 @@ while ($row=$objBDSQL->obtenResult()) {
 
     }
     $sumaDias=0;
-    if($row['Tpo'] == "E"){
+    /*if($row['Tpo'] == "E"){
       $tmp_PPC = "";
       $tmp_PAC = "";
       $tmp_APPC = "";
@@ -703,13 +858,14 @@ while ($row=$objBDSQL->obtenResult()) {
     }else {
       $_cuerpo .= '<td class="Aline"></td>';
       $_cuerpo .= '<td class="Aline"></td>';
-    }
+    }*/
 
     $_nResultados++;
     $_cuerpo .= '<td></td></tr>';
 }
 
-$_cabecera .= "<th>P.P</th><th>P.A</th><th>Firma</th></tr>";
+//$_cabecera .= "<th>P.P</th><th>P.A</th><th>Firma</th></tr>";
+$_cabecera .= "<th>Firma</th></tr>";
 $_cabeceraD .= "</tr>";
 
 if(strlen($_cabeceraD) == 148){

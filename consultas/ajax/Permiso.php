@@ -185,7 +185,7 @@ echo '
 //<th>Contralor</th>
 $objBDSQL->consultaBD($consultaEmpleados);
 while ($row = $objBDSQL->obtenResult()) {
-  $consultaPermisos = "SELECT codigo, nombre, valor, ID, Autorizo1, Autorizo2 FROM datosanti WHERE $ComSql2 AND IDEmpresa = $IDEmpresa AND tipoN = $Tn AND periodoP = $Periodo AND codigo = ".$row['codigo'];
+  $consultaPermisos = "SELECT codigo, nombre, valor, ID, Autorizo1, Autorizo2 FROM datosanti WHERE $ComSql2 AND IDEmpresa = $IDEmpresa AND tipoN = $Tn AND periodoP = $Periodo AND codigo = ".$row['codigo'];  
   $objBDSQL2->consultaBD2($consultaPermisos);
   while($datos = $objBDSQL2->obtenResult2()){
       $codigo = $datos['codigo'];

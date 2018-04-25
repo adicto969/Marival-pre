@@ -1,0 +1,22 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/04/2018 11:58:23 AM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[22/04/2018 09:42:31 PM] - SQLSTATE: 42000
+[22/04/2018 09:42:31 PM] - CODIGO: 102
+[22/04/2018 09:42:31 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near ')'.
+[22/04/2018 09:42:31 PM] - CONSULTA: SELECT IDEmpleado, PDOM, DLaborados, PA, PP, centro FROM ajusteempleado WHERE IDEmpresa = 1
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[22/04/2018 09:43:54 PM] - SQLSTATE: 42000
+[22/04/2018 09:43:54 PM] - CODIGO: 102
+[22/04/2018 09:43:54 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near ')'.
+[22/04/2018 09:43:54 PM] - CONSULTA: SELECT LTRIM(RTRIM(codigo)), sueldo FROM empleados where activo = 'S' and codigo IN (13,5,1584,23,)
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[22/04/2018 09:44:51 PM] - SQLSTATE: 42000
+[22/04/2018 09:44:51 PM] - CODIGO: 102
+[22/04/2018 09:44:51 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near ')'.
+[22/04/2018 09:44:51 PM] - CONSULTA: SELECT LTRIM(RTRIM(codigo)), sueldo FROM empleados where activo = 'S' and codigo IN (13,5,1584,23,)
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[22/04/2018 09:45:27 PM] - SQLSTATE: 42000
+[22/04/2018 09:45:27 PM] - CODIGO: 102
+[22/04/2018 09:45:27 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near ')'.
+[22/04/2018 09:45:27 PM] - CONSULTA: SELECT LTRIM(RTRIM(codigo)), sueldo FROM empleados where activo = 'S' and codigo IN (13,5,1584,23,)

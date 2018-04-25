@@ -1,0 +1,59 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[21/04/2018 11:51:33 AM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[21/04/2018 02:39:33 PM] - SQLSTATE: 42000
+[21/04/2018 02:39:33 PM] - CODIGO: 4104
+[21/04/2018 02:39:33 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]The multi-part identifier "R.centro" could not be bound.
+[21/04/2018 02:39:33 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20170126',
+  '20170210',
+  '58',
+  '0',
+  '1',
+  '4',
+  'L.centro IN (58)',
+  '0',
+  '1',
+  '1',
+  '',
+  '',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[21/04/2018 02:40:37 PM] - SQLSTATE: 42000
+[21/04/2018 02:40:37 PM] - CODIGO: 4104
+[21/04/2018 02:40:37 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]The multi-part identifier "R.centro" could not be bound.
+[21/04/2018 02:40:37 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20170126',
+  '20170210',
+  '58',
+  '0',
+  '1',
+  '4',
+  'L.centro IN (58)',
+  '0',
+  '1',
+  '1',
+  '',
+  '',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[21/04/2018 02:42:09 PM] - SQLSTATE: 42000
+[21/04/2018 02:42:09 PM] - CODIGO: 8114
+[21/04/2018 02:42:09 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Error converting data type varchar to numeric.
+[21/04/2018 02:42:09 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20170126',
+  '20170210',
+  '58',
+  '0',
+  '1',
+  '4',
+  'L.centro IN (58)',
+  '0',
+  '1',
+  '1',
+  '',
+  '',
+  'codigo'
