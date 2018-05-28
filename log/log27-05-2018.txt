@@ -1,0 +1,78 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[27/05/2018 08:21:15 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[27/05/2018 08:48:25 PM] - SQLSTATE: 42000
+[27/05/2018 08:48:25 PM] - CODIGO: 102
+[27/05/2018 08:48:25 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near '00210'.
+[27/05/2018 08:48:25 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20180508',
+  '20180522',
+  '00210',
+  '10',
+  '1',
+  '4',
+  'L.centro IN  = '00210'',
+  '0',
+  '1',
+  '10',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[27/05/2018 08:48:38 PM] - SQLSTATE: 42000
+[27/05/2018 08:48:38 PM] - CODIGO: 102
+[27/05/2018 08:48:38 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near '00210'.
+[27/05/2018 08:48:38 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20180508',
+  '20180522',
+  '00210',
+  '10',
+  '1',
+  '4',
+  'L.centro IN  = '00210'',
+  '0',
+  '1',
+  '10',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[27/05/2018 08:49:47 PM] - SQLSTATE: 42000
+[27/05/2018 08:49:47 PM] - CODIGO: 102
+[27/05/2018 08:49:47 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near '00210'.
+[27/05/2018 08:49:47 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20180508',
+  '20180522',
+  '00210',
+  '10',
+  '1',
+  '4',
+  'L.centro  = '00210'',
+  '0',
+  '1',
+  '10',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[27/05/2018 08:50:24 PM] - SQLSTATE: 42000
+[27/05/2018 08:50:24 PM] - CODIGO: 102
+[27/05/2018 08:50:24 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Incorrect syntax near '00210'.
+[27/05/2018 08:50:24 PM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20180508',
+  '20180522',
+  '00210',
+  '10',
+  '1',
+  '4',
+  'L.centro  = '00210'',
+  '0',
+  '1',
+  '10',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo'

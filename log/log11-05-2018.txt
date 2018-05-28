@@ -1,0 +1,16 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 10:07:47 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 10:15:33 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 10:53:20 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 12:00:32 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 01:53:34 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 03:28:51 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 03:33:09 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[11/05/2018 04:44:26 PM] - SE HA LOGEADO EL USUARIO: jnominas

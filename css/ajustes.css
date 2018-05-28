@@ -1,0 +1,203 @@
+table input[type=text], table input[type=number]{
+	margin: 0px;
+	color: black;
+}
+
+#divContra input[type=text], #divContra input[type=email]{
+	width: auto;
+	height: 2rem;
+	font-size: 1rem;
+}
+
+
+#tablaContra th, #tablaContra td {
+	border-left: 1px solid black;
+}
+
+table thead {
+	background-color: #00b0ff;
+}
+
+/*#Thfija {
+	position: relative;
+	z-index: 1000;
+}
+*/
+
+table thead tr th, table tbody tr td
+{
+	border-bottom: 1px solid #8e8d8d;
+}
+
+#btnGuardar, #btnEnviar {
+	margin: 20px;
+}
+
+#PS {
+	width: 60px;
+}
+
+input:invalid {
+	border: 1px solid red;
+	background-color: #fcd284;
+}
+
+
+@media only screen and (max-width: 478px) {
+
+	#parametros, #Porcen, #divContra, #Fp, #Ptasis, #DFa {
+		text-align: center;
+	}
+
+
+    #periodo, #RP, #DivInputL, #btnLogin, #btnAddU {
+    	margin-left: 0px;
+    }
+
+    #fchI, #fchP_I {
+    	margin-left: 48px;
+    }
+
+    #fchF, #fchP_F {
+    	margin-left: 54px;
+    }
+
+    #tiponom {
+    	margin-left: 30px;
+    }
+
+    #Dep {
+    	margin-left: 33px;
+    }
+
+    #NEmpresa {
+    	margin-left: 14%;
+    }
+
+    #NEmpresa {
+    	width: 78%;
+    }
+
+    #NEmpresa {
+    	font-size: 17px;
+    }
+
+    #NEmpresa {
+    	overflow: hidden;
+    }
+
+    .btn {
+    	margin-left: 31%;
+    }
+
+    #pie {
+    	position: inherit;
+    }
+
+    #LoginLogo {
+    	width: 50%;
+    }
+
+    #RFC {
+    	margin-left: 72px;
+    }
+
+    #FH {
+    	margin-left: 67px;
+    }
+
+    #Correo {
+    	margin-left: 63px;
+    }
+
+    .Formatos {
+    	width: 90%;
+    	margin-bottom: 10px;
+    	margin-left: 0px;
+    }
+
+    #Stasis1 {
+    	margin-bottom: 10px;
+    }
+
+    #Lpp {
+    	margin-right: 90px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+
+	#Lpp {
+    	margin-right: 2px;
+    }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+
+	#Lpp {
+    	margin-right: 39px;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 1024px) {
+
+	#CdMas {
+		display: none;
+	}
+
+	.Cultimo, .thL {
+		line-height: 36px;
+	}
+
+	.mnone {
+		margin: 0px;
+	}
+
+	#pF {
+		margin: 0px;
+		line-height: 32px;
+	}
+
+	#TRolH {
+		line-height: 38px;
+	}
+
+	.alTH, .Line45 {
+		line-height: 45px;
+	}
+
+	#ThMas {
+		line-height: 58px;
+	}
+
+  	.Nmargen {
+    	margin-left: 0px;
+	}
+
+	.Aline, .LineSta {
+		line-height: 36px;
+	}
+
+	.AlineF {
+		line-height: 63px;
+	}
+
+	.Aline2 {
+		line-height: 34px;
+	}
+
+	.Line35 {
+		line-height: 35px;
+	}
+
+}
+
+.pieabajo {
+	position: inherit !important;
+}

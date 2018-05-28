@@ -1,0 +1,77 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:29:52 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:33:28 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:38:52 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:42:42 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:44:12 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 10:47:08 AM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[25/04/2018 10:54:02 AM] - SQLSTATE: 42000
+[25/04/2018 10:54:02 AM] - CODIGO: 102
+[25/04/2018 10:54:02 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[25/04/2018 10:54:02 AM] - CONSULTA: 
+  [dbo].[reporte_checadas_excel_ctro]
+  '20180416',
+  '20180422',
+  '',
+  '10',
+  '1',
+  '1',
+  'L.centro IN ()',
+  '0',
+  '1',
+  '10',
+  '',
+  'WHERE ROW_NUM BETWEEN (1 - 1) * 10 + 1 AND (1 - 1) * 10 + 10',
+  'codigo'
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[25/04/2018 10:54:02 AM] - SQLSTATE: 42000
+[25/04/2018 10:54:02 AM] - CODIGO: 102
+[25/04/2018 10:54:02 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[25/04/2018 10:54:02 AM] - CONSULTA: SELECT con.codigo, em.ap_paterno+' '+em.ap_materno+' '+em.nombre AS nombre,
+                   convert (varchar(10), fchterm, 103) AS fchterm
+                   FROM contratos AS con
+                   INNER JOIN empleados AS em
+                   ON em.codigo = con.codigo
+                   WHERE fchterm BETWEEN '20180426' AND '20180501'
+                   AND vencido = 'F'
+                   AND centro IN ();
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[25/04/2018 10:54:02 AM] - SQLSTATE: 42000
+[25/04/2018 10:54:02 AM] - CODIGO: 102
+[25/04/2018 10:54:02 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[25/04/2018 10:54:02 AM] - CONSULTA: SELECT con.codigo, em.ap_paterno+' '+em.ap_materno+' '+em.nombre AS nombre,
+                    convert (varchar(10), fchterm, 103) AS fchterm
+                    FROM contratos AS con
+                    INNER JOIN empleados AS em ON em.codigo = con.codigo
+                    WHERE fchterm = '20180425'
+                    AND vencido = 'F'
+                    AND centro IN ();
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[25/04/2018 10:54:02 AM] - SQLSTATE: 42000
+[25/04/2018 10:54:02 AM] - CODIGO: 102
+[25/04/2018 10:54:02 AM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[25/04/2018 10:54:02 AM] - CONSULTA: SELECT codigo, nombre, valor, ID
+                         FROM datosanti
+                         WHERE centro IN ()
+                         AND IDEmpresa = 1
+                         AND tipoN = 1
+                         AND periodoP = 17
+                         AND Autorizo1 = 0
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 12:12:17 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 12:14:01 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 12:42:40 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 12:48:06 PM] - SE HA LOGEADO EL USUARIO: isabel
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 12:48:35 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[25/04/2018 05:25:49 PM] - SE HA LOGEADO EL USUARIO: monica

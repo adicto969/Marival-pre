@@ -1,0 +1,12 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 10:07:25 AM] - SE HA LOGEADO EL USUARIO: Isabel
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 10:09:13 AM] - SE HA LOGEADO EL USUARIO: Isabel
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 10:31:53 AM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 11:06:52 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 12:52:01 PM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[23/05/2018 09:14:02 PM] - SE HA LOGEADO EL USUARIO: sudo

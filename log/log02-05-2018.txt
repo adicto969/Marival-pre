@@ -1,0 +1,72 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 10:27:05 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 10:36:28 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 10:36:29 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 10:55:14 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 11:20:47 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 11:25:14 AM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 11:30:54 AM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 11:33:22 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 11:33:53 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 01:25:18 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 01:47:28 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[02/05/2018 01:50:25 PM] - SQLSTATE: 42000
+[02/05/2018 01:50:25 PM] - CODIGO: 102
+[02/05/2018 01:50:25 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[02/05/2018 01:50:25 PM] - CONSULTA: SELECT con.codigo, em.ap_paterno+' '+em.ap_materno+' '+em.nombre AS nombre,
+                   convert (varchar(10), fchterm, 103) AS fchterm
+                   FROM contratos AS con
+                   INNER JOIN empleados AS em
+                   ON em.codigo = con.codigo
+                   WHERE fchterm BETWEEN '20180503' AND '20180508'
+                   AND vencido = 'F'
+                   AND centro IN ();
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[02/05/2018 01:50:25 PM] - SQLSTATE: 42000
+[02/05/2018 01:50:25 PM] - CODIGO: 102
+[02/05/2018 01:50:25 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[02/05/2018 01:50:25 PM] - CONSULTA: SELECT con.codigo, em.ap_paterno+' '+em.ap_materno+' '+em.nombre AS nombre,
+                    convert (varchar(10), fchterm, 103) AS fchterm
+                    FROM contratos AS con
+                    INNER JOIN empleados AS em ON em.codigo = con.codigo
+                    WHERE fchterm = '20180502'
+                    AND vencido = 'F'
+                    AND centro IN ();
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[02/05/2018 01:50:25 PM] - SQLSTATE: 42000
+[02/05/2018 01:50:25 PM] - CODIGO: 102
+[02/05/2018 01:50:25 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ')'.
+[02/05/2018 01:50:25 PM] - CONSULTA: SELECT codigo, nombre, valor, ID
+                         FROM datosanti
+                         WHERE centro IN ()
+                         AND IDEmpresa = 1
+                         AND tipoN = 1
+                         AND periodoP = 18
+                         AND Autorizo1 = 0
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 01:54:07 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 02:41:33 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 02:55:13 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 03:40:02 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 04:01:57 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 04:56:50 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 05:52:22 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[02/05/2018 06:31:51 PM] - SE HA LOGEADO EL USUARIO: jnominas

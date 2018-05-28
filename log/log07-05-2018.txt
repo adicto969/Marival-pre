@@ -1,0 +1,78 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 10:31:35 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 11:29:34 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 11:42:28 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 12:16:18 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[07/05/2018 12:26:35 PM] - SQLSTATE: 42000
+[07/05/2018 12:26:35 PM] - CODIGO: 156
+[07/05/2018 12:26:35 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[07/05/2018 12:26:35 PM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA1',
+                             CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA2'
+                      FROM Periodos
+                      WHERE tiponom = 1
+                      AND periodo = 19-1
+                      AND ayo_operacion = 
+                      AND empresa = ;:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[07/05/2018 12:26:35 PM] - SQLSTATE: 42000
+[07/05/2018 12:26:35 PM] - CODIGO: 102
+[07/05/2018 12:26:35 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ';'.
+[07/05/2018 12:26:35 PM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA1',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA2'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = -1
+                   AND ayo_operacion = 2018
+                   AND empresa =  ;
+:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[07/05/2018 12:26:35 PM] - SQLSTATE: 42000
+[07/05/2018 12:26:35 PM] - CODIGO: 156
+[07/05/2018 12:26:35 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de la palabra clave 'AND'.
+[07/05/2018 12:26:35 PM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA1',
+                             CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA2'
+                      FROM Periodos
+                      WHERE tiponom = 1
+                      AND periodo = 19-1
+                      AND ayo_operacion = 
+                      AND empresa = ;:::::::::::::::::::::::ERROR SQL:::::::::::::::::::::::
+[07/05/2018 12:26:35 PM] - SQLSTATE: 42000
+[07/05/2018 12:26:35 PM] - CODIGO: 102
+[07/05/2018 12:26:35 PM] - MENSAJE: [Microsoft][ODBC Driver 11 for SQL Server][SQL Server]Sintaxis incorrecta cerca de ';'.
+[07/05/2018 12:26:35 PM] - CONSULTA: SELECT CONVERT (VARCHAR (10), inicio, 103) AS 'FECHA1',
+                          CONVERT (VARCHAR (10), cierre, 103) AS 'FECHA2'
+                   FROM Periodos
+                   WHERE tiponom = 1
+                   AND periodo = 19-1
+                   AND ayo_operacion = 2018
+                   AND empresa =  ;
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 12:26:48 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:34:45 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:36:26 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:43:14 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:44:28 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:45:03 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:46:11 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:47:30 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 01:52:32 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 02:12:57 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 02:13:48 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 03:15:55 PM] - SE HA LOGEADO EL USUARIO: MONICA
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 04:56:02 PM] - SE HA LOGEADO EL USUARIO: jnominas
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[07/05/2018 05:48:57 PM] - SE HA LOGEADO EL USUARIO: jnominas

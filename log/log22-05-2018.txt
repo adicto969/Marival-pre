@@ -1,0 +1,28 @@
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 09:09:04 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 09:37:09 AM] - SE HA LOGEADO EL USUARIO: Isabel 
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 10:04:00 AM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 11:21:38 AM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:01:01 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:35:49 PM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:48:46 PM] - SE HA LOGEADO EL USUARIO: Isabel 
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:57:38 PM] - SE HA LOGEADO EL USUARIO: Isabel 
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:59:47 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 12:59:52 PM] - SE HA LOGEADO EL USUARIO: angelica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 01:09:19 PM] - SE HA LOGEADO EL USUARIO: Isabel 
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 01:44:30 PM] - SE HA LOGEADO EL USUARIO: sudo
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 01:54:17 PM] - SE HA LOGEADO EL USUARIO: monica
+:::::::::::::::::::::::LOGIN:::::::::::::::::::::::
+[22/05/2018 05:08:06 PM] - SE HA LOGEADO EL USUARIO: sudo
